@@ -1,11 +1,5 @@
 const mongoose = require("mongoose");
 
-
-const connect = () => {
-    return mongoose.connect("");
-
+module.exports = () => {
+    return mongoose.connect("mongodb://localhost:27017/authorization")
 }
-
-
-
-module.exports = connect;

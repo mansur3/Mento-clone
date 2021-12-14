@@ -1,10 +1,7 @@
-const express = require("express");
-const app = express();
-const connect = require("./configs/db.js");
+const app = require("./index")
+const connect = require("./configs/db")
 
-
-
-app.listen(3001, async () => {
+app.listen(2345, async function () {
     await connect();
-    console.log("Listening on port 3001")
+    console.log("listening on port 2345");
 })

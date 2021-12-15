@@ -1,0 +1,220 @@
+.left-main {
+    background-image: url("./images/AuthStaticImage.png");
+    height: 449px;
+    width: 337px;
+}
+
+.left-main > div:nth-child(1) {
+    height: 14px;
+    width: 297px;
+    left: 2px;
+    top: 2px;
+    font-family: "Roboto" Condensed;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    margin-left: 20px;
+    padding-top: 26px;
+}
+
+.left-main > div:nth-child(2) {
+    height: 14px;
+    width: 297px;
+    left: 2px;
+    top: 2px;
+    font-family: "Roboto" Condensed;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.left-main > div:nth-child(3) {
+    height: 293px;
+}
+
+.left-main > div:nth-child(4) {
+    height: 16px;
+    width: 297px;
+    left: 0px;
+    top: 4px;
+    font-family: "Roboto" "Slab";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color:rgba(255, 255, 255, 1);
+    margin-left: 20px;
+    margin-bottom: 36px;
+}
+
+.left-main > div:nth-child(5) {
+    display: flex;
+    margin-left: 20px;
+    padding-bottom: 30px;
+}
+
+.left-main > div:nth-child(5) div {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    background-color: rgba(153, 153, 153, 1);
+    margin-right: 10px;
+}
+
+.left-main > div:nth-child(5) > div:nth-child(1) {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.right-main {
+    width: 507px;
+    height: 449px;
+}
+
+.right-main > div:nth-child(1) {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.right-main > div:nth-child(1) > button {
+    border: none;
+    background: transparent;
+    color: #64666B;
+    font-size: 20px;
+}
+
+.right-main > div:nth-child(2) {
+    height: 14px;
+/* width: 237px; */
+    left: 10px;
+    top: 10px;
+    font-family: "Roboto" "Slab";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 14px;  
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 96px;
+}
+
+.right-main > div:nth-child(3) {
+    height: 18px;
+/* width: 88px; */
+    left: 10px;
+    top: 10px;
+    font-family: "Roboto" Condensed;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(100, 102, 107, 1);
+    margin-top: 46px;
+}
+
+.right-main > div:nth-child(4) {
+    margin-top: 22px;
+    display: flex
+}
+
+.fb-button {
+    height: 51px;
+    width: 175px;
+    /* left: 86px;
+    top: 232px; */
+    border-radius: 5px;
+    background-color: rgba(59, 89, 151, 1);
+    color: white;
+    font-family: "Roboto" "Slab";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    margin-left: 86px;
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.g-button {
+    height: 51px;
+    width: 152px;
+    /* left: 0px;
+    top: 0px; */
+    border-radius: 5px;
+    background-color: rgba(235, 67, 67, 1);
+    color: white;
+    text-align: center;
+    font-family: "Roboto" "Slab";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    margin-right: 87px;
+    display: flex;
+    align-items: center;
+}
+
+.fb-button > img {
+    max-height: 26.95293426513672px;
+    max-width: 13.180524826049805px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.g-button > img {
+    height: 25px;
+    width: 13px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.right-main > div:nth-child(5) {
+    margin-top: 15px;
+    text-align: center;
+} 
+
+.right-main > div:nth-child(5) > span:nth-child(1) {
+font-family: "Roboto" Condensed;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color: rgba(153, 153, 153, 1);
+margin-right: 5px;
+}
+
+.right-main > div:nth-child(5) > span:nth-child(2) {
+font-family: "Roboto" Condensed;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+}

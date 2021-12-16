@@ -17,6 +17,19 @@ router.get("/" , async(req, res) => {
     return res.status(200).send({Course})
 })
 
+router.get("/:courseid/:videoid", async (req, res) => {
+    const {courseid, videoid} = req.params;
+    const Course = await Courses.findById(courseid).lean().exec();
+    const d = Course.allVideos;
+    var a;
+    d.map((e) => {
+        if(e._id == videoid) {
+            a = e;
+        }
+    })
+    return res.status(200).send({a})
+})
+
 
 
 

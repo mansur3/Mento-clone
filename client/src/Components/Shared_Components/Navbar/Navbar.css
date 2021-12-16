@@ -1,11 +1,8 @@
 .main-navbar {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
     width: 95%;
-=======
-    width: 78%;
->>>>>>> 71ec73caabda29af1ad10eb1c66c74ee2571243d
+
     height: 41px;
     margin: 20px auto 0;
 }

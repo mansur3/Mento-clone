@@ -21,7 +21,6 @@ function App() {
         bottomText1="Are you already a member ?"
         bottomText2="LOG IN"
         ></Auth>
-     
         <Footer></Footer>
      
      

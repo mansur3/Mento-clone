@@ -18,13 +18,13 @@ export const Offercart=()=> {
        
      <Modal isOpen={isopen} onRequestClose={()=>setopen(false)} style={{
          overlay:{
-             backgroundColor:"grey"
+             background:"blur"
          },
          content:{
              backgroundColor:"#1A1D24",
             
              width: "30%",
-             height:"750px",
+            
              marginTop:"0%",
              marginLeft:"35%",
              marginRight:"35%",

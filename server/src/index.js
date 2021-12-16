@@ -22,9 +22,6 @@ app.use(passport.session());
 
 
 
-
-
-
 passport.serializeUser(function ({ user, token }, done) {
     done(null, { user, token });
 });
@@ -32,6 +29,8 @@ passport.serializeUser(function ({ user, token }, done) {
 passport.deserializeUser(function ({ user, token }, done) {
     done(null, { user, token });
 });
+
+// Google Authentication
 
 app.get("/auth/google/failure", function (req, res) {
     return res.send("Something went wrong");
@@ -49,23 +48,16 @@ app.get('/auth/google/callback',
         failureRedirect: '/auth/google/failure'
     }), function (req, res) {
         const { user, token } = req.user;
-        // return res.status(200).json({ user, token });
-        // res.set({ "Auth": { user, token } });
         res.status(200).redirect("http://localhost:3000");
     });
 
-// app.get('/getuser', (req, res) => {
-//     res.send(req.user);
-// })
-
+// For Session Authentication
 
 app.get('/profile', isLoggedIn, function(req, res) {
 
-    // res.render('profile', {
-    //     user : req.user // get the user out of session and pass to template
-    // });
     res.send(req.user);
 });
+
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
     // if user is authenticated in the session, carry on
@@ -74,16 +66,6 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
-
-// function isLoggedIn(req, res, next) {
-//     try {
-//         if (req.isAuthenticated())
-//             return next();
-//         res.redirect('http://localhost:3000');
-//     } catch (error) {
-//         res.send({ error })
-//     }
-// }
 
 app.post("/register", register);
 app.post("/login", login);

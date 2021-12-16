@@ -9,7 +9,7 @@ import {AppContext} from "../../../Context-api/Context";
 
 import {Link} from "react-router-dom";
 
-
+import {Home_Component} from "../../Pages/Home_Page_Component";
 
 
 
@@ -38,10 +38,11 @@ const AllLesson = () => {
                     {
                         lesson.map((e, i) => (
                             <Grid sx = {{mt: 8}} item xs={6} md={4}>
-                                <Link to = {`/singletopic/${e._id}`}>
-                                <Typography variant = "h2" sx = {{fontSize: "22px", fontFamily : "Roboto Slab", fontWeight: "800", color : "white"}} component = "div" >
+                                <Link style = {{textDecoration : "none"}} to = {`/singletopic/${e._id}`}>
+                                {/* <Typography variant = "h2" sx = {{fontSize: "22px", fontFamily : "Roboto Slab", fontWeight: "800", color : "white"}} component = "div" >
                                     Learn From India's Biggest Mentors
-                                </Typography>
+                                </Typography> */}
+                                <Home_Component course = {e} />
                                 </Link>
         
                             </Grid>

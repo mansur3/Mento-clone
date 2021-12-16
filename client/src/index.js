@@ -10,16 +10,20 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import {BrowserRouter} from "react-router-dom";
 import {AppContextProvider} from "./Context-api/Context";
+import { Provider } from "react-redux";
+import { store } from "./Store/store";
 
 ReactDOM.render(
   <React.StrictMode>
     <StyledEngineProvider injectFirst>
+    <Provider store={store}>
+
     <BrowserRouter>
     <AppContextProvider>
       <App />
     </AppContextProvider>
     </BrowserRouter>
-  
+  </Provider>
   </StyledEngineProvider>,
   </React.StrictMode>,
   document.getElementById('root')

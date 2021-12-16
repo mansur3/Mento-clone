@@ -1,0 +1,112 @@
+.main-navbar {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 41px;
+    margin: 20px auto 0;
+}
+
+.main-navbar > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+}
+
+.main-navbar > div:nth-child(1) > img:nth-child(1) {
+    max-width: 40px;
+    max-width: 40px;
+    margin-left: 5px;
+}
+
+.main-navbar > div:nth-child(1) > img:nth-child(2) {
+    margin-left: 9.8px;
+    max-height: 22.052841186523438px;
+    max-width: 81.28347778320312px;
+}
+
+.main-navbar > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    margin-left: 781px;
+    background: rgba(33, 36, 45, 0.4);
+    height: 40px;
+    width: 300px;
+    border-radius: 4px;
+    /* padding: 9px 8px 9px 8px; */
+}
+
+.main-navbar > div:nth-child(2) > img {
+    height: 22px;
+    width: 22px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.main-navbar > div:nth-child(2) > input {
+    height: 22px;
+    width: 250px;
+    border: none;
+    background-color: transparent;
+}
+
+.main-navbar > div:nth-child(2) > input::-webkit-input-placeholder {
+    font-family: "Roboto" Condensed;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: -0.025em;
+}
+
+.main-navbar > div:nth-child(3) {
+    font-family: "Roboto Condensed";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.main-navbar > div:nth-child(4) {
+    font-family: "Roboto Condensed";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 44px;
+    color: white;
+    cursor: pointer;
+}
+
+.auth-button {
+    background: linear-gradient(252.93deg, #F58528 6.15%, #F36936 40.54%, #ED2256 73.61%);
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    color: white;
+    margin-left: 36px;
+    cursor: pointer;
+    /* border-radius: 20px; */
+}
+
+.loggedin-button {
+    background: linear-gradient(252.93deg, #F58528 6.15%, #F36936 40.54%, #ED2256 73.61%);
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    color: white;
+    margin-left: 61px;
+    cursor: pointer;
+    font-family: "Sarala";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    border: none;
+}

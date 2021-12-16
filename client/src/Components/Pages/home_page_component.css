@@ -1,0 +1,136 @@
+.rectangle{
+    transform: skewY(-8deg);
+    transform-origin: top left;
+    margin-bottom: 0;
+    
+    left: 0;
+    bottom: -68px;
+    width: 100%;
+    height: 74px;
+    background: #fff;
+}
+
+.HPC01{
+    display: grid;
+    margin-top: 0px;
+   
+    grid-template-columns: 20% 60% 20%;
+}
+.image{
+    max-width: 45px;
+    max-height: 45px;
+    margin-left: 25%;
+    margin-top: 21%;
+
+}
+
+.playbutton{
+    float: right;
+
+    margin-top: -28%;
+    margin-right: 5%;
+   
+   
+   
+}
+.Coursename{
+    font-family: "Roboto Slab";
+   
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 26px;
+text-align: left;
+margin-left: 4%;
+position: relative;
+
+margin-top: -10%;
+
+color: #1A1D24;
+
+
+
+
+}
+.HPC01name{
+    font-family: Roboto Condensed;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 16px;
+/* identical to box height, or 100% */
+
+text-transform: uppercase;
+
+color: #1A1D24;
+text-align: left;
+margin-left: 5%;
+}
+
+.HPC01number{
+    font-family: Roboto Condensed;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 16px;
+/* identical to box height, or 100% */
+
+text-transform: uppercase;
+
+color: #1A1D24;
+text-align: center;
+
+}
+.HPC02{
+    margin-right: 15%;
+}
+.HPC01D{
+    font-family: Roboto Condensed;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 12px;
+margin-left: 5%;
+text-align: left;
+/* identical to box height, or 100% */
+
+text-transform: uppercase;
+
+color: #999999;
+}
+.HPC01videos{
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+ 
+   
+    /* identical to box height, or 100% */
+    
+    text-transform: uppercase;
+    
+    color: #999999;
+
+}
+.hover:hover{
+    transform : scale(1.1); 
+    overflow: hidden;
+    
+}
+.hover{
+
+  
+    background-repeat: no-repeat;
+    transition: all 1s;
+    overflow-x: auto;
+    overflow-y:auto;
+
+
+}
+.HPCmain{
+    border-radius: 20px;
+    width: 430px;
+}
+
+

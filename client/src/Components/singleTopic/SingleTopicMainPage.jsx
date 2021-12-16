@@ -31,8 +31,14 @@ import Avatar from "@mui/material/Avatar";
 
 
 
+
 import Modal from "@mui/material/Modal";
 import "./trailer/trailer.css";
+import Navbar from "../Shared_Components/Navbar/Navbar"
+
+
+
+import {Offercart} from "../Pages/Offercardpopup";
 
 // import { First } from "../landingPage/firstThing/first";
 // import { Comment } from "../landingPage/comment/Comment";
@@ -75,6 +81,19 @@ const [open, setOpen] = useState(false);
 
 
 
+  //Offer card popups
+
+
+  const [isopen,setIsOpen]=useState(false)
+  const handleclick=()=>{
+    setIsOpen(true)
+
+}
+
+
+
+
+
 
   const getData = () => {
     let data = lesson.map((e) => {
@@ -93,6 +112,7 @@ const [open, setOpen] = useState(false);
 
   return (
     <>
+      <Offercart isopen = {isopen} setIsOpen = {setIsOpen} />
       <Box sx={{ flexGrow: 1, backgroundColor: "#242833" }}>
       {/* <Trailer clickEvent = {handleClick} trailer = {all.trailer} /> */}
 
@@ -144,6 +164,10 @@ const [open, setOpen] = useState(false);
             backgroundImage: `url(${all.backgroundImage})`,
           }}
         >
+          <Box>
+          <Navbar style = {{marginLeft : "100px"}} />
+          </Box>
+          
           <Typography
             sx={{
               fontSize: "18px",
@@ -193,7 +217,7 @@ const [open, setOpen] = useState(false);
                 </Typography>
 
                 <Box sx={{ mt: 4 }} variant="contained">
-                  <Button>
+                  <Button onClick={handleclick}>
                     <img src={logo2} alt="enroll now" />
                   </Button>
                 </Box>

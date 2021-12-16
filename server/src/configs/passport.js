@@ -17,13 +17,15 @@ passport.use(new GoogleStrategy({
   },
   async function(request, accessToken, refreshToken, profile, done) {
     const email = profile?._json?.email
-
+      
     let user;
     try { 
       user = await User.findOne({email}).lean().exec();
 
       if(!user) {
         user = await User.create({
+          name: profile._json.name,
+          picture: profile._json.picture,
           email: email,
           password: uuidV4()
         })

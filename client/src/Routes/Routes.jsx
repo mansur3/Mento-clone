@@ -4,6 +4,7 @@
 import {Switch, Route} from "react-router-dom";
 import {Main} from "../Components/landingPage/landingPage";
 import {SingleTopicMainPage} from "../Components/singleTopic/SingleTopicMainPage";
+import {PlayVideo} from "../Components/singleTopic/playVideo/PlayVideo";
 import Navbar from '../Components/Shared_Components/Navbar/Navbar';
 import { Footer } from '../Components/Shared_Components/Footer/Footer';
 
@@ -22,9 +23,12 @@ const Routes = () => {
                     <Navbar></Navbar>
                     <Main />
                 </Route>
-                <Route path = "/singletopic/:id">
+                <Route exact path = "/singletopic/:id">
                     <SingleTopicMainPage />
 
+                </Route>
+                <Route exact path = "/playvideo/:videoid/:courseid">
+                    <PlayVideo />
                 </Route>
             </Switch>
             <Footer></Footer>

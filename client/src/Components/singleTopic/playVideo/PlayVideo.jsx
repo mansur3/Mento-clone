@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
-import { AppContext } from "../../Context-api/Context";
-import {Link} from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { AppContext } from "../../../Context-api/Context";
 
 import {
   Box,
@@ -14,16 +13,16 @@ import {
   CardActions,
   Stack,
 } from "@mui/material";
-import logo2 from "./enrollNow.svg";
-import right from "./Vector.svg";
-import PlayButton from "./Playbutton.svg";
-import Favorite from "./favorite.svg";
-import DC from "./DownloadCertificate.svg";
-import Certificate from "./Certificate.svg";
-import DB from "./DB.svg";
-import pdf from "./pdf.svg";
-import time from "./time.svg";
-import whatnew from "./whatsnew.svg";
+// import logo2 from "./enrollNow.svg";
+// import right from "./Vector.svg";
+// import PlayButton from "./Playbutton.svg";
+import Favorite from "../favorite.svg";
+import DC from "../DownloadCertificate.svg";
+import Certificate from "../Certificate.svg";
+import DB from "../DB.svg";
+import pdf from "../pdf.svg";
+import time from "../time.svg";
+import whatnew from "../whatsnew.svg";
 
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -34,12 +33,12 @@ import Avatar from "@mui/material/Avatar";
 
 
 import Modal from "@mui/material/Modal";
-import "./trailer/trailer.css";
-import Navbar from "../Shared_Components/Navbar/Navbar"
+// import "./trailer/trailer.css";
+import Navbar from "../../Shared_Components/Navbar/Navbar"
 
 
 
-import {Offercart} from "../Pages/Offercardpopup";
+// import {Offercart} from "../Pages/Offercardpopup";
 
 // import { First } from "../landingPage/firstThing/first";
 // import { Comment } from "../landingPage/comment/Comment";
@@ -66,30 +65,25 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const SingleTopicMainPage = () => {
-  const { id } = useParams();
+const PlayVideo = () => {
+  const { videoid, courseid } = useParams();
   const { lesson } = useContext(AppContext);
   const [all, setAll] = useState({});
   const [authorAbouta, setAuthorAbout] = useState([]);
   const [allVideo, setAllVideo] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState({});
 
 
 // trailer code
-const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+// const [open, setOpen] = useState(false);
+//   const handleOpen = () => setOpen(true);
+//   const handleClose = () => setOpen(false);
 
 
 
 
-  //Offer card popups
 
 
-  const [isopen,setIsOpen]=useState(false)
-  const handleclick=()=>{
-    setIsOpen(true)
-
-}
 
 
 
@@ -98,27 +92,47 @@ const [open, setOpen] = useState(false);
 
   const getData = () => {
     let data = lesson.map((e) => {
-      if (e._id === id) {
+      if (e._id === courseid) {
         setAll(e);
         setAuthorAbout(e.authorAbout);
         setAllVideo(e.allVideos);
+        e.allVideos.map((j) => {
+            if(j._id === videoid) {
+                setSelectedVideo(j);
+            }
+        })
+
       }
     });
   };
+
+
+//   const getVideo = () => {
+//       allVideo.map((e) => {
+//           if(e._id === videoid) {
+//             setSelectedVideo(e);
+//           }
+//       })
+//   }
+  console.log(selectedVideo);
+
+
   // console.log(allVideo[0].image);
+
 
   useEffect(() => {
     getData();
+    // getVideo();
   }, []);
 
   return (
     <>
-      <Offercart isopen = {isopen} setIsOpen = {setIsOpen} />
+  
       <Box sx={{ flexGrow: 1, backgroundColor: "#242833" }}>
       {/* <Trailer clickEvent = {handleClick} trailer = {all.trailer} /> */}
 
 {/* trailer code */}
-<div>
+{/* <div>
      
       <Modal
         open={open}
@@ -153,7 +167,7 @@ const [open, setOpen] = useState(false);
           ></iframe>
         </Box>
       </Modal>
-    </div>
+    </div> */}
 
 {/* end trailer code */}
 
@@ -162,13 +176,39 @@ const [open, setOpen] = useState(false);
           style={{
             backgroundSize: "100% 1000px",
             backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${all.backgroundImage})`,
+            backgroundImage: `url("https://www.mento.co.in/assets/all-topics-bg-c70ac523da68e4c48726cc16261ddb6d5b08a7f43fa4dc0e78f5488466e78514.png")`,
           }}
         >
           <Box>
           <Navbar style = {{marginLeft : "100px"}} />
           </Box>
+
+
+          {/* Show the video */}
+
+          <Container maxWidth="xl">
+            <Box >
+            <video  style={{ width : "100%", height: "850px", borderRadius: "10px"}}  autoPlay controls>
+                    <source src = {selectedVideo.video} type = "video/mp4" />
+                    <source src="movie.ogg" type="video/ogg" />
+               </video>
+               {/* <iframe
+                position="absolute"
+                src="https://d1tthr7pv14hhy.cloudfront.net/Images/general/background1.mp4"
+                title="samplezoomvideo"
+                frameborder="0"
+                width="100%"
+                height="900px"
+                allowFullScreen="true"
+            ></iframe> */}
+            </Box>
+          </Container>
+
+          {/* End Show video */}
+
           
+{/*           
+        
           <Typography
             sx={{
               fontSize: "18px",
@@ -275,11 +315,11 @@ const [open, setOpen] = useState(false);
                 </Box>
               </div>
             </Box>
-          </Typography>
+          </Typography> */}
 
           {/* container Start */}
 
-          <Container sx={{ mt: 8 }} maxWidth="xl">
+          <Container  maxWidth="xl">
             <Box sx={{ flexGrow: 1 }}>
               <Paper  sx = {{borderRadius : 2}}>
                 <Grid container md={12}>
@@ -416,6 +456,7 @@ const [open, setOpen] = useState(false);
                       <Box sx={{ p: 5 }}>
                         {allVideo.map((e) => (
                           <Link style = {{textDecoration : "none"}} to = {`/playvideo/${e._id}/${all._id}`}>
+
                           <div
                             key={e._id}
                             style={{
@@ -442,22 +483,45 @@ const [open, setOpen] = useState(false);
                               </Grid>
                               <Grid item md={9}>
                                 <Box sx={{ p: 1 }}>
-                                  <Typography
-                                    variant="h1"
-                                    sx={{
-                                      paddingLeft: 2,
-                                      paddingTop: 2,
+                                    {
+                                        e._id === videoid ? (
+                                            <Typography
+                                                variant="h1"
+                                                sx={{
+                                                paddingLeft: 2,
+                                                paddingTop: 2,
 
-                                      fontSize: "18px",
-                                      fontWeight: "700",
-                                      fontFamily: "Poppins, sans-serif",
-                                      color: "black",
-                                      mt: "5px",
-                                    }}
-                                    component="div"
-                                  >
-                                    {e.title}
-                                  </Typography>
+                                                fontSize: "18px",
+                                                fontWeight: "700",
+                                                fontFamily: "Poppins, sans-serif",
+                                                color: "#2979FF",
+                                                mt: "5px",
+                                                }}
+                                                component="div"
+                                            >
+                                                {e.title}
+                                            </Typography>
+
+                                        ) : (
+                                            <Typography
+                                                variant="h1"
+                                                sx={{
+                                                paddingLeft: 2,
+                                                paddingTop: 2,
+
+                                                fontSize: "18px",
+                                                fontWeight: "700",
+                                                fontFamily: "Poppins, sans-serif",
+                                                color: "black",
+                                                mt: "5px",
+                                                }}
+                                                component="div"
+                                            >
+                                                {e.title}
+                                            </Typography>
+                                        )
+                                    }
+                                  
                                   <Typography
                                     variant="h1"
                                     sx={{
@@ -665,4 +729,4 @@ const [open, setOpen] = useState(false);
   );
 };
 
-export { SingleTopicMainPage };
+export { PlayVideo };

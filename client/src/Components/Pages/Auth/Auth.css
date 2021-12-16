@@ -98,6 +98,7 @@
     background: transparent;
     color: #64666B;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .right-main > div:nth-child(2) {
@@ -155,6 +156,7 @@
     margin-right: 7px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .g-button {
@@ -176,6 +178,7 @@
     margin-right: 87px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .fb-button > img {
@@ -217,4 +220,14 @@ font-weight: 400;
 line-height: 24px;
 letter-spacing: 0em;
 text-align: center;
+}
+
+.btn-login {
+    background: linear-gradient(252.93deg, #F58528 6.15%, #F36936 40.54%, #ED2256 73.61%);
+    height: 40px;
+    width: 75px;
+    border-radius: 4px;
+    color: white;
+    margin-left: 36px;
+    cursor: pointer;
 }

@@ -20,7 +20,8 @@ const register = async (req, res) => {
 
         const token = newToken(user)
 
-        return res.status(200).send({ user, token });
+        // return res.status(200).send({ user, token });
+        return res.status(200).redirect("http://localhost:3000/");
 
     } catch (err) {
         return res.status(500).send({ message: "Sorry for inconvenience please try again later" });
@@ -41,7 +42,8 @@ const login = async (req, res) => {
 
         const token = newToken(user)
 
-        return res.status(200).send({ user, token });
+        // return res.status(200).send({ user, token });
+        return res.status(200).redirect("http://localhost:3000/");
 
     } catch (err) {
         return res.status(500).send({ message: "Sorry for inconvenience please try again later" });

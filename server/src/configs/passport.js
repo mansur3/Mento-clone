@@ -16,7 +16,7 @@ passport.use(new GoogleStrategy({
   },
   async function(request, accessToken, refreshToken, profile, done) {
     const email = profile?._json?.email
-    
+      
     let user;
     try { 
       user = await User.findOne({email}).lean().exec();

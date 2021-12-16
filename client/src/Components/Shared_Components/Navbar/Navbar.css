@@ -111,3 +111,14 @@
     letter-spacing: 0em;
     border: none;
 }
+
+.btn-login {
+    background: linear-gradient(252.93deg, #F58528 6.15%, #F36936 40.54%, #ED2256 73.61%);
+    height: 40px;
+    width: 75px;
+    border-radius: 4px;
+    color: white;
+    margin-left: 36px;
+    /* margin: auto; */
+    cursor: pointer;
+}

@@ -24,6 +24,7 @@ import DB from "./DB.svg";
 import pdf from "./pdf.svg";
 import time from "./time.svg";
 import whatnew from "./whatsnew.svg";
+import lock from "./lock.svg";
 
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -40,6 +41,13 @@ import Navbar from "../Shared_Components/Navbar/Navbar"
 
 
 import {Offercart} from "../Pages/Offercardpopup";
+
+
+import Auth from '../Pages/Auth/Auth';
+import { useSelector } from 'react-redux';
+
+
+
 
 // import { First } from "../landingPage/firstThing/first";
 // import { Comment } from "../landingPage/comment/Comment";
@@ -92,9 +100,49 @@ const [open, setOpen] = useState(false);
 }
 
 
+//isAuth 
+
+
+const { isAuth, user } = useSelector((store) => store.auth);
+const [show, setShow] = useState("login")
+
+    const setSign = (e) => {
+        setShow(e);
+    }
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    function openModal() {
+        setModalIsOpen(true);
+    }
+console.log(isAuth, user);
 
 
 
+{/* <Auth
+                head={show === "sign" ? "Join Us!" : "Welcome Back!"}
+                subhead={show === "sign" ? "SIGN UP WITH" : "LOGIN WITH"}
+                bottomText1={show === "sign" ? "Are you already a member ?" : "Not a member yet ?"}
+                bottomText2={show === "sign" ? "LOG IN" : "SIGN UP"}
+                display="LOGIN"
+                setStatus={setSign}
+                storedStatus={show}
+            ></Auth> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const [videoStatus, setVideoStatus] = useState(false);
 
   const getData = () => {
     let data = lesson.map((e) => {
@@ -102,6 +150,7 @@ const [open, setOpen] = useState(false);
         setAll(e);
         setAuthorAbout(e.authorAbout);
         setAllVideo(e.allVideos);
+        setVideoStatus(e.lockStatus);
       }
     });
   };
@@ -218,9 +267,27 @@ const [open, setOpen] = useState(false);
                 </Typography>
 
                 <Box sx={{ mt: 4 }} variant="contained">
-                  <Button onClick={handleclick}>
-                    <img src={logo2} alt="enroll now" />
-                  </Button>
+                  {
+                    isAuth ? (
+                        <Button onClick={handleclick}>
+                      <img src={logo2} alt="enroll now" />
+                    </Button>
+                    ) : (
+                      <Auth
+                          head={show === "sign" ? "Join Us!" : "Welcome Back!"}
+                          subhead={show === "sign" ? "SIGN UP WITH" : "LOGIN WITH"}
+                          bottomText1={show === "sign" ? "Are you already a member ?" : "Not a member yet ?"}
+                          bottomText2={show === "sign" ? "LOG IN" : "SIGN UP"}
+                          modalIsOpen = {modalIsOpen}
+                          setModalIsOpen = {setModalIsOpen}
+                          openModal = {openModal}
+                          display={<img style = {{marginLeft : "-30px", marginTop : "-5px"}} src = {logo2} alt = "enroll now" />}
+                          setStatus={setSign}
+                          storedStatus={show}
+                      ></Auth>
+                    )
+                  }
+                  
                 </Box>
                 <Typography
                   variant="h1"
@@ -415,7 +482,111 @@ const [open, setOpen] = useState(false);
 
                       <Box sx={{ p: 5 }}>
                         {allVideo.map((e) => (
-                          <Link style = {{textDecoration : "none"}} to = {`/playvideo/${e._id}/${all._id}`}>
+
+
+
+
+
+                          // {
+                            isAuth ? ( 
+                              videoStatus ? (
+                                
+                          <div
+                          onClick={handleclick}
+                          disabled
+                            key={e._id}
+                            style={{
+                              backgroundColor: "#F7F7F7",
+                              padding: "5px",
+                              marginBottom: "30px",
+                            }}
+                          >
+                            <Grid container md={12}>
+                              <Grid item md={3}>
+                                <div
+                                  style={{
+                                    opacity: "0.6",
+                                    backgroundImage: `url(${e.image})`,
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundSize: "200px 120px",width: "200px", height: "120px"
+                                  }}
+                                >
+                                  <img
+                                    style={{ width: "50px", height: "50px", marginLeft : "75px", marginTop : "35px" }}
+                                    src={lock}
+                                    alt="image"
+                                  />
+                                </div>
+                              </Grid>
+                              <Grid item md={9}>
+                                <Box sx={{ p: 1 }}>
+                                  <Typography
+                                    variant="h1"
+                                    sx={{
+                                      paddingLeft: 2,
+                                      paddingTop: 2,
+
+                                      fontSize: "18px",
+                                      fontWeight: "700",
+                                      fontFamily: "Poppins, sans-serif",
+                                      color: "black",
+                                      mt: "5px",
+                                    }}
+                                    component="div"
+                                  >
+                                    {e.title}
+                                  </Typography>
+                                  <Typography
+                                    variant="h1"
+                                    sx={{
+                                      paddingLeft: 2,
+                                      paddingTop: 2,
+
+                                      fontSize: "17px",
+                                      fontWeight: "500",
+                                      fontFamily: "Poppins, sans-serif",
+                                      color: "gray",
+                                      mt: "5px",
+                                    }}
+                                    component="div"
+                                  >
+                                    {e.description}
+                                  </Typography>
+                                  <div style={{ marginTop: "20px" }}>
+                                    <Stack direction="row">
+                                      <Box
+                                        sx={{
+                                          pl: 2,
+                                          ml: "20px",
+                                          color: "gray",
+                                        }}
+                                      >
+                                        <img src={time} alt="favorite" />
+                                      </Box>
+                                      <Typography
+                                        variant="h1"
+                                        sx={{
+                                          paddingLeft: 2,
+
+                                          lineHeight: "1",
+                                          fontSize: "17px",
+                                          fontWeight: "500",
+                                          fontFamily: "Poppins, sans-serif",
+                                          color: "gray",
+                                        }}
+                                        component="div"
+                                      >
+                                        {e.duration}
+                                      </Typography>
+                                    </Stack>
+                                  </div>
+                                </Box>
+                              </Grid>
+                            </Grid>
+                          </div>
+                          
+                              ) : (
+                                <Link style = {{textDecoration : "none"}} to = {`/playvideo/${e._id}/${all._id}`}>
                           <div
                             key={e._id}
                             style={{
@@ -507,6 +678,204 @@ const [open, setOpen] = useState(false);
                             </Grid>
                           </div>
                           </Link>
+                              )
+                              
+                            ) : (
+                              <Auth
+                                  head={show === "sign" ? "Join Us!" : "Welcome Back!"}
+                                  subhead={show === "sign" ? "SIGN UP WITH" : "LOGIN WITH"}
+                                  bottomText1={show === "sign" ? "Are you already a member ?" : "Not a member yet ?"}
+                                  bottomText2={show === "sign" ? "LOG IN" : "SIGN UP"}
+                                  modalIsOpen = {modalIsOpen}
+                                  setModalIsOpen = {setModalIsOpen}
+                                  openModal = {openModal}
+                                  display={<div
+                                    key={e._id}
+                                    style={{
+                                      backgroundColor: "#F7F7F7",
+                                      padding: "5px",
+                                      marginBottom: "30px",
+                                    }}
+                                  >
+                                    <Grid container md={12}>
+                                      <Grid item md={3}>
+                                        <div
+                                          style={{
+                                            backgroundImage: `url(${e.image})`,
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundSize: "200px 120px",width: "200px", height: "120px"
+                                          }}
+                                        >
+                                          {/* <img
+                                            style={{ width: "200px", height: "150px" }}
+                                            src={e.image}
+                                            alt="image"
+                                          /> */}
+                                        </div>
+                                      </Grid>
+                                      <Grid item md={9}>
+                                        <Box sx={{ p: 1 }}>
+                                          <Typography
+                                            variant="h1"
+                                            sx={{
+                                              paddingLeft: 2,
+                                              paddingTop: 2,
+        
+                                              fontSize: "18px",
+                                              fontWeight: "700",
+                                              fontFamily: "Poppins, sans-serif",
+                                              color: "black",
+                                              mt: "5px",
+                                            }}
+                                            component="div"
+                                          >
+                                            {e.title}
+                                          </Typography>
+                                          <Typography
+                                            variant="h1"
+                                            sx={{
+                                              paddingLeft: 2,
+                                              paddingTop: 2,
+        
+                                              fontSize: "17px",
+                                              fontWeight: "500",
+                                              fontFamily: "Poppins, sans-serif",
+                                              color: "gray",
+                                              mt: "5px",
+                                            }}
+                                            component="div"
+                                          >
+                                            {e.description}
+                                          </Typography>
+                                          <div style={{ marginTop: "20px" }}>
+                                            <Stack direction="row">
+                                              <Box
+                                                sx={{
+                                                  pl: 2,
+                                                  ml: "20px",
+                                                  color: "gray",
+                                                }}
+                                              >
+                                                <img src={time} alt="favorite" />
+                                              </Box>
+                                              <Typography
+                                                variant="h1"
+                                                sx={{
+                                                  paddingLeft: 2,
+        
+                                                  lineHeight: "1",
+                                                  fontSize: "17px",
+                                                  fontWeight: "500",
+                                                  fontFamily: "Poppins, sans-serif",
+                                                  color: "gray",
+                                                }}
+                                                component="div"
+                                              >
+                                                {e.duration}
+                                              </Typography>
+                                            </Stack>
+                                          </div>
+                                        </Box>
+                                      </Grid>
+                                    </Grid>
+                                  </div>}
+                                  setStatus={setSign}
+                                  storedStatus={show}
+                              ></Auth>
+                            )
+                          // }
+                          // <Link style = {{textDecoration : "none"}} to = {`/playvideo/${e._id}/${all._id}`}>
+                          // <div
+                          //   key={e._id}
+                          //   style={{
+                          //     backgroundColor: "#F7F7F7",
+                          //     padding: "5px",
+                          //     marginBottom: "30px",
+                          //   }}
+                          // >
+                          //   <Grid container md={12}>
+                          //     <Grid item md={3}>
+                          //       <div
+                          //         style={{
+                          //           backgroundImage: `url(${e.image})`,
+                          //           backgroundRepeat: "no-repeat",
+                          //           backgroundSize: "200px 120px",width: "200px", height: "120px"
+                          //         }}
+                          //       >
+                          //         {/* <img
+                          //           style={{ width: "200px", height: "150px" }}
+                          //           src={e.image}
+                          //           alt="image"
+                          //         /> */}
+                          //       </div>
+                          //     </Grid>
+                          //     <Grid item md={9}>
+                          //       <Box sx={{ p: 1 }}>
+                          //         <Typography
+                          //           variant="h1"
+                          //           sx={{
+                          //             paddingLeft: 2,
+                          //             paddingTop: 2,
+
+                          //             fontSize: "18px",
+                          //             fontWeight: "700",
+                          //             fontFamily: "Poppins, sans-serif",
+                          //             color: "black",
+                          //             mt: "5px",
+                          //           }}
+                          //           component="div"
+                          //         >
+                          //           {e.title}
+                          //         </Typography>
+                          //         <Typography
+                          //           variant="h1"
+                          //           sx={{
+                          //             paddingLeft: 2,
+                          //             paddingTop: 2,
+
+                          //             fontSize: "17px",
+                          //             fontWeight: "500",
+                          //             fontFamily: "Poppins, sans-serif",
+                          //             color: "gray",
+                          //             mt: "5px",
+                          //           }}
+                          //           component="div"
+                          //         >
+                          //           {e.description}
+                          //         </Typography>
+                          //         <div style={{ marginTop: "20px" }}>
+                          //           <Stack direction="row">
+                          //             <Box
+                          //               sx={{
+                          //                 pl: 2,
+                          //                 ml: "20px",
+                          //                 color: "gray",
+                          //               }}
+                          //             >
+                          //               <img src={time} alt="favorite" />
+                          //             </Box>
+                          //             <Typography
+                          //               variant="h1"
+                          //               sx={{
+                          //                 paddingLeft: 2,
+
+                          //                 lineHeight: "1",
+                          //                 fontSize: "17px",
+                          //                 fontWeight: "500",
+                          //                 fontFamily: "Poppins, sans-serif",
+                          //                 color: "gray",
+                          //               }}
+                          //               component="div"
+                          //             >
+                          //               {e.duration}
+                          //             </Typography>
+                          //           </Stack>
+                          //         </div>
+                          //       </Box>
+                          //     </Grid>
+                          //   </Grid>
+                          // </div>
+                          // </Link>
                         ))}
                       </Box>
 

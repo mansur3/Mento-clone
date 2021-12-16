@@ -14,17 +14,17 @@ const customStyles = {
     },
 };
 
-const Auth = ({ head, subhead, bottomText1, bottomText2, display, setStatus, storedStatus }) => {
+const Auth = ({ head, subhead, bottomText1, bottomText2, display, setStatus, storedStatus, modalIsOpen, setModalIsOpen, openModal }) => {
 
     let subtitle;
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+    // const [modalIsOpen, setModalIsOpen] = React.useState(false);
 
-    function openModal() {
-        setIsOpen(true);
-    }
+    // function openModal() {
+    //     setModalIsOpen(true);
+    // }
 
     function closeModal() {
-        setIsOpen(false);
+        setModalIsOpen(false);
         setStatus("login");
     }
 
@@ -44,7 +44,7 @@ const Auth = ({ head, subhead, bottomText1, bottomText2, display, setStatus, sto
 
     return (
         <>
-            <button className='btn-login' onClick={openModal}>{display}</button>
+            <div style = {{cursor : "pointer"}} onClick={openModal}>{display}</div>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

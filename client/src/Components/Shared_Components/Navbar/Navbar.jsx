@@ -12,6 +12,13 @@ const Navbar = () => {
         setShow(e);
     }
 
+
+    const [modalIsOpen, setModalIsOpen] = React.useState(false);
+
+    function openModal() {
+        setModalIsOpen(true);
+    }
+
     return (
         <div className='main-navbar'>
             <div style = {{zIndex : 1}}>
@@ -29,7 +36,10 @@ const Navbar = () => {
                 subhead={show === "sign" ? "SIGN UP WITH" : "LOGIN WITH"}
                 bottomText1={show === "sign" ? "Are you already a member ?" : "Not a member yet ?"}
                 bottomText2={show === "sign" ? "LOG IN" : "SIGN UP"}
-                display="LOGIN"
+                display={<button className = "btn-login">LOGIN</button>}
+                modalIsOpen = {modalIsOpen}
+                setModalIsOpen = {setModalIsOpen}
+                openModal = {openModal}
                 setStatus={setSign}
                 storedStatus={show}
             ></Auth>}

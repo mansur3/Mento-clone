@@ -26,7 +26,7 @@ export const Home_Component=({course})=>{
                 <p className="Coursename">{course.courseName}</p>
             </div>
             <div className="HPC01">
-              <img  className="image" src="img1.png" alt=""></img>
+              <img  className="image" src={course.sampleImage} alt=""></img>
                 
                 <div >
                     <p className="HPC01name">{course.authorName}</p>

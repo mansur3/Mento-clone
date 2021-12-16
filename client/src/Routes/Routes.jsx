@@ -4,6 +4,7 @@ import Navbar from '../Components/Shared_Components/Navbar/Navbar';
 import { Footer } from '../Components/Shared_Components/Footer/Footer';
 import Home from '../Components/Pages/Home';
 import Auth from '../Components/Pages/Auth/Auth';
+import { Home_Component } from '../Components/Pages/Home_Page_Component';
 
 const Routes = () => {
     return (
@@ -11,8 +12,7 @@ const Routes = () => {
             <Navbar></Navbar>
             <Switch>
                 <Route exact path="/">
-                    <Home></Home>
-                    {/* Its a DUmmy Home Component */}
+                    <Home_Component></Home_Component>
                 </Route>
             </Switch>
             <Footer></Footer>

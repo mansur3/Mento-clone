@@ -269,9 +269,12 @@ console.log(isAuth, user);
                 <Box sx={{ mt: 4 }} variant="contained">
                   {
                     isAuth ? (
+                      (all.AfterDiscount === 0) ? ("") : (
                         <Button onClick={handleclick}>
-                      <img src={logo2} alt="enroll now" />
-                    </Button>
+                          <img src={logo2} alt="enroll now" />
+                        </Button>
+                      )
+                        
                     ) : (
                       <Auth
                           head={show === "sign" ? "Join Us!" : "Welcome Back!"}

@@ -3,7 +3,8 @@ const express = require('express');
 const passport = require("./configs/passport")
 
 const { register, login } = require("./controllers/auth.controller");
-
+const CoursesController = require("./controllers/allCourses.controller.js");
+const CommentController = require("./controllers/comment.controller");
 const app = express();
 
 app.use(express.json());
@@ -38,5 +39,9 @@ app.get('/auth/google/callback',
 
 app.post("/register", register);
 app.post("/login", login);
+
+
+app.use("/courses", CoursesController);
+app.use("/comment", CommentController);
 
 module.exports = app;

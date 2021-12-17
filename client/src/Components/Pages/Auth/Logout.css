@@ -1,0 +1,40 @@
+.logout-button {
+    background: linear-gradient(252.93deg, #F58528 6.15%, #F36936 40.54%, #ED2256 73.61%);
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    color: white;
+    margin-left: 61px;
+    cursor: pointer;
+    font-family: "Sarala";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    border: none;
+}
+
+.inside-logout-button {
+    /* height: 60px; */
+    width: 182px;
+    border-radius: 5px;
+    padding: 7px 3px 7px 3px;
+}
+
+.inside-logout-button > div:nth-child(1), .inside-logout-button > div:nth-child(3) {
+    margin-left: 11px;
+    margin-top: 15px;
+    margin-bottom: 11px;
+    font-family: "Roboto Condensed";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    color: rgba(89, 89, 89, 1);
+}
+
+.inside-logout-button > div:nth-child(1):hover, .inside-logout-button > div:nth-child(3):hover {
+    cursor: pointer;
+}

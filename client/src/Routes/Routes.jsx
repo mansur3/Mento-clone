@@ -1,24 +1,40 @@
-import React from 'react';
-import { Route, Switch } from "react-router-dom";
+
+
+
+import {Switch, Route} from "react-router-dom";
+import {Main} from "../Components/landingPage/landingPage";
+import {SingleTopicMainPage} from "../Components/singleTopic/SingleTopicMainPage";
+import {PlayVideo} from "../Components/singleTopic/playVideo/PlayVideo";
 import Navbar from '../Components/Shared_Components/Navbar/Navbar';
 import { Footer } from '../Components/Shared_Components/Footer/Footer';
-import Home from '../Components/Pages/Home';
-import Auth from '../Components/Pages/Auth/Auth';
-import { Offercart } from '../Components/Pages/Offercardpopup';
+
+// import Home from '../Components/Pages/Home';
+// import Auth from '../Components/Pages/Auth/Auth';
+
+
 
 const Routes = () => {
     return (
-        <div>
-            <Navbar></Navbar>
+        <>
+        
             <Switch>
-                <Route exact path="/">
-                    <Home></Home>
-                    {/* Its a DUmmy Home Component */}
+
+                <Route exact path = "/">
+                    <Navbar></Navbar>
+                    <Main />
+                </Route>
+                <Route exact path = "/singletopic/:id">
+                    <SingleTopicMainPage />
+
+                </Route>
+                <Route exact path = "/playvideo/:videoid/:courseid">
+                    <PlayVideo />
                 </Route>
             </Switch>
             <Footer></Footer>
-        </div>
+        </>
     )
 }
 
-export default Routes
+export {Routes};
+

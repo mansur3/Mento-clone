@@ -222,12 +222,22 @@ letter-spacing: 0em;
 text-align: center;
 }
 
-.btn-login {
+/* .btn-login {
     background: linear-gradient(252.93deg, #F58528 6.15%, #F36936 40.54%, #ED2256 73.61%);
     height: 40px;
     width: 75px;
     border-radius: 4px;
     color: white;
     margin-left: 36px;
+    cursor: pointer;
+} */
+
+.onhover {
+    color: black;
+    text-decoration: none;
+}
+
+.onhover:hover {
+    color:  #F58528;
     cursor: pointer;
 }

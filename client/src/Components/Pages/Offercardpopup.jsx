@@ -5,18 +5,18 @@ import { border, borderRadius, color, width } from "@mui/system";
 import "./offercardpopup.css"
 
 Modal.setAppElement("#root")
-export const Offercart=()=> {
-  const [isopen,setopen]=useState(false)
-  const handleclick=()=>{
-      setopen(true)
+export const Offercart=({isopen, setIsOpen})=> {
+//   const [isopen,setIsOpen]=useState(false)
+//   const handleclick=()=>{
+//       setIsOpen(true)
 
-  }
+//   }
     
   return (
     <div>
-        <button onClick={handleclick}>Open</button>
+        {/* <button onClick={handleclick}>Open</button> */}
        
-     <Modal isOpen={isopen} onRequestClose={()=>setopen(false)} style={{
+     <Modal isOpen={isopen} onRequestClose={()=>setIsOpen(false)} style={{
          overlay:{
           background:"blur(1px)"
          },
@@ -36,7 +36,7 @@ export const Offercart=()=> {
 
      }}>
          
-         <img className="cross" src="cross icon.svg" alt="" onClick={()=>setopen(false)}></img>
+         <img className="cross" src="cross icon.svg" alt="" onClick={()=>setIsOpen(false)}></img>
          <h1 className="offermodal1" style={{width:"50%",margin:"auto"}}>₹499</h1>
          <p className="offermodal2">Get 1 year access to:</p>
          <div style={{width:"60%",margin:"auto"}}>

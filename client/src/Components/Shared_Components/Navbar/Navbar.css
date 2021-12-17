@@ -1,7 +1,8 @@
 .main-navbar {
     display: flex;
     align-items: center;
-    width: 77%;
+    width: 95%;
+
     height: 41px;
     margin: 20px auto 0;
 }
@@ -26,7 +27,7 @@
 .main-navbar > div:nth-child(2) {
     display: flex;
     align-items: center;
-    margin-left: 441px;
+    margin-left: 781px;
     background: rgba(33, 36, 45, 0.4);
     height: 40px;
     width: 300px;
@@ -109,4 +110,15 @@
     line-height: 17px;
     letter-spacing: 0em;
     border: none;
+}
+
+.btn-login {
+    background: linear-gradient(252.93deg, #F58528 6.15%, #F36936 40.54%, #ED2256 73.61%);
+    height: 40px;
+    width: 75px;
+    border-radius: 4px;
+    color: white;
+    margin-left: 36px;
+    /* margin: auto; */
+    cursor: pointer;
 }

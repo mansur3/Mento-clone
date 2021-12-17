@@ -3,17 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from "react-router-dom";
+import { StyledEngineProvider } from '@mui/material/styles';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import {BrowserRouter} from "react-router-dom";
+import {AppContextProvider} from "./Context-api/Context";
 import { Provider } from "react-redux";
 import { store } from "./Store/store";
 
 ReactDOM.render(
   <React.StrictMode>
+    <StyledEngineProvider injectFirst>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+
+    <BrowserRouter>
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>
+    </BrowserRouter>
+  </Provider>
+  </StyledEngineProvider>,
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@fontsource/roboto": "^4.5.1",
     "@mui/icons-material": "^5.2.1",
     "@mui/material": "^5.2.4",
     "@mui/styled-engine-sc": "^5.1.0",
@@ -20,7 +21,8 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.2",
     "styled-components": "^5.3.3",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

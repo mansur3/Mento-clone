@@ -4,7 +4,8 @@ const passport = require("./configs/passport")
 const session = require("express-session");
 
 const { register, login } = require("./controllers/auth.controller");
-
+const CoursesController = require("./controllers/allCourses.controller.js");
+const CommentController = require("./controllers/comment.controller");
 const app = express();
 
 app.use(cors({origin: 'http://localhost:3000', credentials: true}));
@@ -69,5 +70,9 @@ function isLoggedIn(req, res, next) {
 
 app.post("/register", register);
 app.post("/login", login);
+
+
+app.use("/courses", CoursesController);
+app.use("/comment", CommentController);
 
 module.exports = app;

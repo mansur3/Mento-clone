@@ -1,3 +1,4 @@
+
 import { Footer } from './Components/Shared_Components/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import { Home_Component } from './Components/Pages/Home_Page_Component';
@@ -7,7 +8,8 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import { authSuccess, authFailure } from "./Store/Auth/actions";
-import Routes from './Routes/Routes';
+import {Routes} from './Routes/Routes';
+
 
 
 function App() {
@@ -41,9 +43,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Routes></Routes>
 
+    <div className = "App">
+     <Routes />
 
     </div>
   );

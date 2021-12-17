@@ -27,7 +27,7 @@ export const AppContextProvider = ({children}) => {
                 families: [ "Poppins, sans-serif", "Roboto Slab", "Roboto Condensed"]
             }
         })
-    })
+    },[])
 
 
     return (

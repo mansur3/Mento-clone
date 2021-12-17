@@ -50,4 +50,21 @@ const login = async (req, res) => {
     }
 }
 
-module.exports = { register, login, newToken }
+
+const userupdate = async (req, res) => {
+    
+    const {id} = req.params;
+    const one = await User.findOne({id});
+    var c = one.courses
+    // console.log(c);
+    if(!(c.includes(req.body.courses))) {
+        c.push(req.body.courses);
+    }
+    // c.push(req.body.courses);
+    // console.log(c);
+    let user = await User.findByIdAndUpdate(id, {courses : c}, {new : true});
+
+    return res.status(200).send({user, newToken});
+}
+
+module.exports = { register, login, newToken, userupdate }

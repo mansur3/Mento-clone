@@ -109,13 +109,14 @@ const [show, setShow] = useState("login")
     const setSign = (e) => {
         setShow(e);
     }
+    // console.log(user);
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     function openModal() {
         setModalIsOpen(true);
     }
-console.log(isAuth, user);
+// console.log(isAuth, user);
 
 
 
@@ -143,26 +144,38 @@ console.log(isAuth, user);
 
 
     const [videoStatus, setVideoStatus] = useState(false);
+    const [price, setPrice] = useState("")
 
   const getData = () => {
     let data = lesson.map((e) => {
       if (e._id === id) {
         setAll(e);
+        setPrice(e.AfterDiscount)
         setAuthorAbout(e.authorAbout);
         setAllVideo(e.allVideos);
+        
         setVideoStatus(e.lockStatus);
       }
     });
   };
+  // console.log(user.id)
   // console.log(allVideo[0].image);
 
   useEffect(() => {
     getData();
+    var data = JSON.parse(localStorage.getItem("data"));
+    // console.log(data);
+    // console.log(user.user.courses);
+    if(isAuth) {
+      if(user.user.courses.includes(id)) {
+        setVideoStatus(false);
+      }
+    }
   }, []);
 
   return (
     <>
-      <Offercart isopen = {isopen} setIsOpen = {setIsOpen} />
+      <Offercart price = {price} courseId = {id}  videoStatus = {videoStatus} setVideoStatus = {setVideoStatus} isopen = {isopen} setIsOpen = {setIsOpen} />
       <Box sx={{ flexGrow: 1, backgroundColor: "#242833" }}>
       {/* <Trailer clickEvent = {handleClick} trailer = {all.trailer} /> */}
 
@@ -270,9 +283,15 @@ console.log(isAuth, user);
                   {
                     isAuth ? (
                       (all.AfterDiscount === 0) ? ("") : (
-                        <Button onClick={handleclick}>
+                        videoStatus ? (
+                          <Button  onClick={handleclick}>
                           <img src={logo2} alt="enroll now" />
                         </Button>
+                        ) : (
+                          ""
+                        )
+                        
+                        
                       )
                         
                     ) : (

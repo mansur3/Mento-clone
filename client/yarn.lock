@@ -9411,6 +9411,11 @@ react-modal@^3.14.4:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
+react-razorpay@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-razorpay/-/react-razorpay-1.1.2.tgz#3071153d4c796556b0c1994681ac474432361295"
+  integrity sha512-riG3BTm5UffKTZkv0nMzkjo3rAXWVE6HCCgg2kDdBQECykyIkOFMXL7+BHYuDTrBZ5l5oFj8so1wmskc/VeTaQ==
+
 react-redux@^7.2.6:
   version "7.2.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.6.tgz#49633a24fe552b5f9caf58feb8a138936ddfe9aa"

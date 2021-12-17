@@ -11,7 +11,7 @@ const Navbar = () => {
     const setSign = (e) => {
         setShow(e);
     }
-
+// console.log(user);
 
     const [modalIsOpen, setModalIsOpen] = React.useState(false);
 
@@ -21,7 +21,7 @@ const Navbar = () => {
 
     return (
         <div className='main-navbar'>
-            <div style = {{zIndex : 1}}>
+            <div style = {{zIndex : 1, marginLeft : "100px"}}>
                 <img src="./images/navbarlogo.png" alt="" />
                 <img src="./images/navbarmento.png" alt="" />
             </div>

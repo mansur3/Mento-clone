@@ -3,7 +3,7 @@ const cors = require('cors')
 const passport = require("./configs/passport")
 const session = require("express-session");
 
-const { register, login } = require("./controllers/auth.controller");
+const { register, login, userupdate } = require("./controllers/auth.controller");
 const CoursesController = require("./controllers/allCourses.controller.js");
 const CommentController = require("./controllers/comment.controller");
 const app = express();
@@ -59,6 +59,9 @@ app.get('/profile', isLoggedIn, function(req, res) {
     res.send(req.user);
 });
 
+
+
+
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
     // if user is authenticated in the session, carry on
@@ -70,7 +73,7 @@ function isLoggedIn(req, res, next) {
 
 app.post("/register", register);
 app.post("/login", login);
-
+app.patch("/profile/:id", userupdate);
 
 app.use("/courses", CoursesController);
 app.use("/comment", CommentController);

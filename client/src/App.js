@@ -12,6 +12,10 @@ import {Routes} from './Routes/Routes';
 
 
 
+// import Pay from "./Components/singleTopic/payment/razorpay";
+
+
+
 function App() {
 
   const [name, setName] = useState("");
@@ -45,6 +49,7 @@ function App() {
   return (
 
     <div className = "App">
+      {/* <Pay /> */}
      <Routes />
 
     </div>

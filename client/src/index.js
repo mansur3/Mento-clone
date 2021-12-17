@@ -15,7 +15,7 @@ import { store } from "./Store/store";
 
 ReactDOM.render(
   <React.StrictMode>
-    <StyledEngineProvider injectFirst>
+    {/* <StyledEngineProvider injectFirst> */}
     <Provider store={store}>
 
     <BrowserRouter>
@@ -24,7 +24,7 @@ ReactDOM.render(
     </AppContextProvider>
     </BrowserRouter>
   </Provider>
-  </StyledEngineProvider>,
+  {/* </StyledEngineProvider>, */}
   </React.StrictMode>,
   document.getElementById('root')
 );

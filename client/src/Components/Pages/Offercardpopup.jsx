@@ -18,7 +18,7 @@ export const Offercart=({isopen, setIsOpen})=> {
        
      <Modal isOpen={isopen} onRequestClose={()=>setIsOpen(false)} shouldCloseOnOverlayClick={false} style={{
          overlay:{
-          background:"blur(1px)"
+             background : "rgba(0, 0, 0, 0.6)"
          },
          content:{
              backgroundColor:"#1A1D24",

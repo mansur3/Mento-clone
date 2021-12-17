@@ -12,6 +12,9 @@ const customStyles = {
         display: "flex"
 
     },
+    overlay:{
+        background : "rgba(0, 0, 0, 0.6)"
+    }
 };
 
 const Auth = ({ head, subhead, bottomText1, bottomText2, display, setStatus, storedStatus, modalIsOpen, setModalIsOpen, openModal }) => {

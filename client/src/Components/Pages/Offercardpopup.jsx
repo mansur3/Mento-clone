@@ -16,7 +16,7 @@ export const Offercart=({isopen, setIsOpen})=> {
     <div>
         {/* <button onClick={handleclick}>Open</button> */}
        
-     <Modal isOpen={isopen} onRequestClose={()=>setIsOpen(false)} style={{
+     <Modal isOpen={isopen} onRequestClose={()=>setIsOpen(false)} shouldCloseOnOverlayClick={false} style={{
          overlay:{
           background:"blur(1px)"
          },

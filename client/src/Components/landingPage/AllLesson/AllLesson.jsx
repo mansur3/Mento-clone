@@ -37,7 +37,7 @@ const AllLesson = () => {
 
                     {
                         lesson.map((e, i) => (
-                            <Grid sx = {{mt: 8}} item xs={6} md={4}>
+                            <Grid key = {i} sx = {{mt: 8}} item xs={6} md={4}>
                                 <Link style = {{textDecoration : "none"}} to = {`/singletopic/${e._id}`}>
                                 {/* <Typography variant = "h2" sx = {{fontSize: "22px", fontFamily : "Roboto Slab", fontWeight: "800", color : "white"}} component = "div" >
                                     Learn From India's Biggest Mentors

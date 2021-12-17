@@ -1,16 +1,86 @@
 
 import Modal from  "react-modal"
 import { useState } from "react";
+import axios from "axios";
 import { border, borderRadius, color, width } from "@mui/system";
 import "./offercardpopup.css"
+import { useCallback } from "react";
+import useRazorpay, { RazorpayOptions } from "react-razorpay";
+
+// import Auth from './Pages/Auth/Auth';
+import { useSelector } from 'react-redux';
 
 Modal.setAppElement("#root")
-export const Offercart=({isopen, setIsOpen})=> {
+export const Offercart=({isopen, setIsOpen,price, courseId, videoStatus,setVideoStatus })=> {
 //   const [isopen,setIsOpen]=useState(false)
 //   const handleclick=()=>{
 //       setIsOpen(true)
 
 //   }
+
+
+const { isAuth, user } = useSelector((store) => store.auth);
+
+
+  const updateData = async () => {
+    const id = {
+      courses : courseId
+    }
+    const {data} = await axios.patch(`http://localhost:2345/profile/${user.user._id}`, id);
+    console.log(user.user._id);
+    // console.log(data.user.courses);
+    console.log(data);
+    if(data.user.courses.includes(courseId)) {
+      setVideoStatus(false);
+    } 
+    
+    localStorage.setItem("data", JSON.stringify(data))
+  }
+  
+
+
+
+//payment code
+
+const Razorpay = useRazorpay();
+
+  const handlePayment =  useCallback( () => {
+    const order = {
+        "amount": 1000,
+        "currency": "INR",
+        "receipt": "rcptid_11",
+       
+    }
+
+    const options: RazorpayOptions = {
+      key: "rzp_test_WVl89PSwPNGgbZ",
+      amount: "50000",
+      currency: "INR",
+      name: `${user.name}`,
+      description: "Test Transaction",
+      image: `${user.picture}`,
+      order_id: order.id,
+      handler: (res) => {
+        console.log(res);
+      },
+      prefill: {
+        name: `${user.name}`,
+        email: `${user.email}`,
+        contact: "",
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#f09951",
+      },
+    };
+
+    const rzpay = new Razorpay(options);
+    rzpay.open();
+    updateData();
+  }, [Razorpay]);
+
     
   return (
     <div>
@@ -59,12 +129,12 @@ export const Offercart=({isopen, setIsOpen})=> {
              <p className="offermodal6">UNLOCK ALL OUR 17 COURSES, WORKBOOKS AND CERTIFICATES FOR JUST <span className="offermodal_s" > ₹199</span> MORE. VALID FOR <span className="offermodal_s" > 1 YEAR</span></p>
                 <div className="checkbox">
                     <input type="checkbox" className="checkbox1"/> 
-                    <label className="checkbox2">ADD</label>
+                    <label className="checkbox2" >ADD</label>
                     
 
                 </div>
          </div>
-         <button className="offerbutton">START LEARNING </button>
+         <button onClick={handlePayment} className="offerbutton">START LEARNING <span src="aarow-right.svg" alt=""></span></button>
          
          
      </Modal>

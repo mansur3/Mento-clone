@@ -9548,6 +9548,11 @@
     "react-lifecycles-compat" "^3.0.0"
     "warning" "^4.0.3"
 
+"react-razorpay@^1.1.2":
+  "integrity" "sha512-riG3BTm5UffKTZkv0nMzkjo3rAXWVE6HCCgg2kDdBQECykyIkOFMXL7+BHYuDTrBZ5l5oFj8so1wmskc/VeTaQ=="
+  "resolved" "https://registry.npmjs.org/react-razorpay/-/react-razorpay-1.1.2.tgz"
+  "version" "1.1.2"
+
 "react-redux@^7.2.6":
   "integrity" "sha512-10RPdsz0UUrRL1NZE0ejTkucnclYSgXp5q+tB5SWx2qeG2ZJQJyymgAhwKy73yiL/13btfB6fPr+rgbMAaZIAQ=="
   "resolved" "https://registry.npmjs.org/react-redux/-/react-redux-7.2.6.tgz"

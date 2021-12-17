@@ -18,12 +18,13 @@ export const Offercart=()=> {
        
      <Modal isOpen={isopen} onRequestClose={()=>setopen(false)} style={{
          overlay:{
-             background:"blur"
+          background:"blur(1px)"
          },
          content:{
              backgroundColor:"#1A1D24",
             
              width: "30%",
+             height:"750px",
             
              marginTop:"0%",
              marginLeft:"35%",
@@ -63,7 +64,7 @@ export const Offercart=()=> {
 
                 </div>
          </div>
-         <button className="offerbutton">START LEARNING <span src="aarow-right.svg" alt=""></span></button>
+         <button className="offerbutton">START LEARNING </button>
          
          
      </Modal>

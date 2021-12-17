@@ -42,27 +42,9 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
-        <Auth 
-        head="Welcome Back!"
-        subhead="LOGIN WITH"
-        bottomText1="Not a member yet ?"
-        bottomText2="SIGN UP"
-        ></Auth>
-        <Auth 
-        head="Join Us!"
-        subhead="SIGN UP WITH"
-        bottomText1="Are you already a member ?"
-        bottomText2="LOG IN"
-        ></Auth>
-        <Footer></Footer>
-     
-     
-=======
       <Routes></Routes>
 
 
->>>>>>> 220ebadd63609e2b057cdef4a08e69af340e4a47
     </div>
   );
 }

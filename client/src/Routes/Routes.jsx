@@ -4,6 +4,7 @@ import Navbar from '../Components/Shared_Components/Navbar/Navbar';
 import { Footer } from '../Components/Shared_Components/Footer/Footer';
 import Home from '../Components/Pages/Home';
 import Auth from '../Components/Pages/Auth/Auth';
+import { Offercart } from '../Components/Pages/Offercardpopup';
 
 const Routes = () => {
     return (

@@ -1,45 +1,50 @@
 .main-navbar {
     display: flex;
     align-items: center;
-    width: 95%;
-
+    min-width: 82%;
+    max-width: 82%;
+    background: transparent;
     height: 41px;
-    margin: 20px auto 0;
+    /* margin: auto !important; */
+    margin-left: 9%;
+    margin-right: 9%;
+    padding-top: 20px;
 }
 
 .main-navbar > div:nth-child(1) {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
-.main-navbar > div:nth-child(1) > img:nth-child(1) {
+.main-navbar > div:nth-child(1) > img {
     max-width: 40px;
-    max-width: 40px;
+    max-width: 131px;
     margin-left: 5px;
 }
 
-.main-navbar > div:nth-child(1) > img:nth-child(2) {
+/* .main-navbar > div:nth-child(1) > img:nth-child(2) {
     margin-left: 9.8px;
     max-height: 22.052841186523438px;
     max-width: 81.28347778320312px;
-}
+} */
 
 .main-navbar > div:nth-child(2) {
     display: flex;
     align-items: center;
-    margin-left: 781px;
+    margin-left: 670px;
     background: rgba(33, 36, 45, 0.4);
     height: 40px;
-    width: 300px;
+    width: 290px;
     border-radius: 4px;
     /* padding: 9px 8px 9px 8px; */
 }
 
 .main-navbar > div:nth-child(2) > img {
-    height: 22px;
-    width: 22px;
+    height: 18px;
+    width: 18px;
     margin-left: 8px;
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
 .main-navbar > div:nth-child(2) > input {
@@ -121,4 +126,5 @@
     margin-left: 36px;
     /* margin: auto; */
     cursor: pointer;
+    border: none;
 }

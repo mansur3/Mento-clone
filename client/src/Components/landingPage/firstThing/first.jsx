@@ -53,7 +53,7 @@ const First = () => {
 
                     </Grid>
                     <Grid item xs={6} md={8}>
-                        <video    style={{ width : "100%", height: "600px", borderRadius: "10px"}} loop autoPlay muted>
+                        <video    style={{ width : "100%", height: "500px", marginTop : "100px", borderRadius: "10px"}} loop autoPlay muted>
                             <source src = "https://d1tthr7pv14hhy.cloudfront.net/Images/general/background1.mp4" type = "video/mp4" />
                             <source src="movie.ogg" type="video/ogg" />
                         </video>

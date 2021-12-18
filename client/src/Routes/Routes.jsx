@@ -22,7 +22,7 @@ const Routes = () => {
             <Switch>
 
                 <Route exact path = "/">
-                    <Navbar></Navbar>
+                    
                     <Main />
                 </Route>
                 <Route exact path = "/singletopic/:id">

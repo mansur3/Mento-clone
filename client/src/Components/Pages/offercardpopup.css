@@ -5,7 +5,7 @@ right: 0%;
 top: 26.39%;
 bottom: 0%;
 
-font-family: Roboto Condensed;
+font-family: "Roboto Condensed";
 font-style: normal;
 font-weight: bold;
 font-size: 60px;
@@ -25,7 +25,7 @@ right: 0%;
 top: 0%;
 bottom: 0%;
 
-font-family: Roboto Condensed;
+font-family: "Roboto Condensed";
 font-style: normal;
 font-weight: bold;
 font-size: 20px;
@@ -41,7 +41,7 @@ color: #FFFFFF;
 
 }
 .offermodal3{
-    font-family: Roboto Condensed;
+    font-family: "Roboto Condensed";
 font-style: normal;
 font-weight: normal;
 font-size: 16px;
@@ -61,10 +61,10 @@ color: #FFFFFF;
     border-radius: 10px;
     padding-bottom: 10px;
     padding-top: 10px;
-
+    margin-top: 20px;
 }
 .offermodal4{
-    font-family: Roboto Condensed;
+    font-family: "Roboto Condensed";
 font-style: normal;
 font-weight: bold;
 font-size: 18px;
@@ -74,7 +74,7 @@ margin-top: 10px;
 margin-bottom: 0;
 }
 .offermodal5{
-    font-family: Roboto Condensed;
+    font-family: "Roboto Condensed";
 font-style: normal;
 font-weight: bold;
 font-size: 16px;
@@ -85,7 +85,7 @@ text-transform: uppercase;
 color: #FFFFFF;
 }
 .offermodal6{
-    font-family: Roboto Condensed;
+    font-family: "Roboto Condensed";
 font-style: normal;
 font-weight: normal;
 font-size: 15px;
@@ -133,7 +133,7 @@ span.offermodal_s{
 .checkbox2{
     color: #F38438 ;
     
-    font-family: Roboto Condensed;
+    font-family: "Roboto Condensed";
 font-style: normal;
 font-weight: bold;
 font-size: 20px;
@@ -146,7 +146,7 @@ margin: 10px;
    margin-top: 7%;
    padding: 20px;
    color: white;
-   font-family: Roboto Slab;
+   font-family: "Roboto Slab";
 font-style: normal;
 font-weight: bold;
 font-size: 14px;

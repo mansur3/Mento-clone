@@ -1,6 +1,9 @@
 
 import "./certificate.css"
  import certificate from "./Auth/images/certificate1.png"
+ import sign1 from "./Auth/images/sign.png"
+ import sign2 from "./Auth/images/sign2.png"
+ import M_logo from "./Auth/images/M_logo.png"
 
  import { useRef, useState, useEffect } from "react";
 import "@progress/kendo-theme-material/dist/all.css";
@@ -112,7 +115,7 @@ export const Certificate=()=>{
                       }}
                     >
                       <div className="uuuu">
-                        <img className="c_right1" src="sign2.png"></img>
+                        <img className="c_right1" src={sign2}></img>
   
                         <p className="c_right2">{author}</p>
                         <p className="c_right3">{courseName}</p>
@@ -130,10 +133,10 @@ export const Certificate=()=>{
                       <p className="c_left3">ACKNOWLEDGING THAT</p>
                       <p className="c_left4">{user.user.name}</p>
                       <p className="c_left5"> HAS SUCCESSFULLY COMPLETED</p>
-                      <p className="c_left6"> ENTREPRENEURSHIP</p>
-                      <img src="sign.png"></img>
+                      <p className="c_left6"> {courseName}</p>
+                      <img src={sign1}></img>
                       <p></p>
-                      <img className="c_left7" src="M_logo.png"></img>
+                      <img className="c_left7" src={M_logo}></img>
                       <p className="c_left8">Mento</p>
                     </div>
                   </div>

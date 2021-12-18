@@ -73,6 +73,7 @@ line-height: 17px;
     font-weight: bold;
     font-size: 21px;
     line-height: 17px;
+    text-transform: uppercase;
     /* identical to box height, or 79% */
     
     letter-spacing: 0.025em;
@@ -129,6 +130,7 @@ letter-spacing: 0.04em;
 margin-top: 0;
 
 color: #FFFFFF;
+text-transform: uppercase;
 }
 .uuuu{
     margin-top: 70%;

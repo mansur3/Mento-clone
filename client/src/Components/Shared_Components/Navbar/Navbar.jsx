@@ -33,7 +33,7 @@ const Navbar = () => {
             </div>
             <div>ALL TOPICS</div>
             <div>ABOUT</div>
-            {isAuth ? (<Logout userData={user.user.name[0].toUpperCase()}></Logout>) : (<Auth
+            {isAuth ? (<Logout ></Logout>) : (<Auth
                 head={show === "sign" ? "Join Us!" : "Welcome Back!"}
                 subhead={show === "sign" ? "SIGN UP WITH" : "LOGIN WITH"}
                 bottomText1={show === "sign" ? "Are you already a member ?" : "Not a member yet ?"}

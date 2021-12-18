@@ -15,7 +15,7 @@ const customStyles = {
     },
 };
 
-const Logout = ({ userData }) => {
+const Logout = () => {
 
     const { isAuth, user } = useSelector((store) => store.auth);
 
@@ -40,7 +40,7 @@ const Logout = ({ userData }) => {
 
     return (
         <div>
-            <button className='logout-button' onClick={openModal}>{userData}</button>
+            <button className='logout-button' onClick={openModal}>{user === null ? (""): (user.user.name[0])}</button>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

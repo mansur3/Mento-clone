@@ -10,6 +10,7 @@ import axios from "axios";
 import { authSuccess, authFailure } from "./Store/Auth/actions";
 import {Routes} from './Routes/Routes';
 import {Certificate} from "./Components/Pages/Certificate";
+import 'materialize-css/dist/css/materialize.min.css';
 
 
 

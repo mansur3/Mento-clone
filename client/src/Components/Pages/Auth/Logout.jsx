@@ -40,13 +40,14 @@ const Logout = () => {
           })
       }
     useEffect(() => {
+        fetchUser();
         if(isAuth) {
             if(user == null) {
                 // setName(user.user.name[0].toUpperCase());
                 fetchUser();
             }
-            setName(user.user.name)
-            console.log(user.user.name);
+            // setName(user.user.name)
+            // console.log(user.user.name);
             
         } else {
             setName("Login")

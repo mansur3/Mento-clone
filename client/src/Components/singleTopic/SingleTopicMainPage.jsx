@@ -10,6 +10,7 @@ import {
   Container,
   Grid,
   Card,
+  Chip,
   CardContent,
   CardActions,
   Stack,
@@ -48,6 +49,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {authSuccess, authFailure} from "../../Store/Auth/actions.js";
 import axios from "axios";
+import 'materialize-css';
 
 // import { First } from "../landingPage/firstThing/first";
 // import { Comment } from "../landingPage/comment/Comment";
@@ -303,13 +305,17 @@ const dispatch = useDispatch();
                 <Box sx={{ mt: 4 }} variant="contained">
                   {
                     isAuth ? (
-                      (all.AfterDiscount === 0) ? ("") : (
+                      (all.AfterDiscount === 0) ? (
+                        <Chip sx = {{color : "white"}}  avatar={<Avatar>{all.totalVideo}</Avatar>} label="Lessons" variant = "outlined" />
+                      ) : (
                         videoStatus ? (
-                          <Button  onClick={handleclick}>
-                          <img src={logo2} alt="enroll now" />
-                        </Button>
+                          <Button   onClick={handleclick}>
+                            <div className = "pulse">
+                          <img  src={logo2} alt="enroll now" />
+                          </div>
+                         </Button>
                         ) : (
-                          ""
+                          <Chip sx = {{color : "white"}} avatar={<Avatar>{all.totalVideo}</Avatar>} label="Lessons" variant = "outlined" />
                         )
                         
                         

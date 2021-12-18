@@ -80,6 +80,7 @@ const SingleTopicMainPage = () => {
   const [all, setAll] = useState({});
   const [authorAbouta, setAuthorAbout] = useState([]);
   const [allVideo, setAllVideo] = useState([]);
+  const [authorNamea, setAuthorName] = useState("");
 
 
 // trailer code
@@ -165,6 +166,7 @@ const dispatch = useDispatch();
       if (e._id === id) {
         setAll(e);
         setPrice(e.AfterDiscount)
+        setAuthorName(e.authorName)
         setAuthorAbout(e.authorAbout);
         setAllVideo(e.allVideos);
         
@@ -193,7 +195,7 @@ const dispatch = useDispatch();
 
   return (
     <>
-      <Offercart price = {price} courseId = {id}  videoStatus = {videoStatus} setVideoStatus = {setVideoStatus} isopen = {isopen} setIsOpen = {setIsOpen} />
+      <Offercart price = {price} authorName = {authorNamea} courseId = {id}  videoStatus = {videoStatus} setVideoStatus = {setVideoStatus} isopen = {isopen} setIsOpen = {setIsOpen} />
       <Box sx={{ flexGrow: 1, backgroundColor: "#242833" }}>
       {/* <Trailer clickEvent = {handleClick} trailer = {all.trailer} /> */}
 

@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import { authSuccess, authFailure } from "./Store/Auth/actions";
 import {Routes} from './Routes/Routes';
+import {Certificate} from "./Components/Pages/Certificate";
 
 
 
@@ -49,7 +50,7 @@ function App() {
   return (
 
     <div className = "App">
-      {/* <Pay /> */}
+      {/* <Certificate /> */}
      <Routes />
 
     </div>

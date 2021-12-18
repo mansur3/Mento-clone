@@ -431,7 +431,27 @@ const dispatch = useDispatch();
                               <img src={Certificate} alt="favorite" />
                             </Box>
                             <Box sx={{ p: 2 }}>
+                              {
+                                isAuth ? (
+                                  <Link style = {{textDecoration : "none"}} to = {`/certificate/${all._id}`}>
                               <img src={DC} alt="favorite" />
+                              </Link>
+                                ) : (
+                                  <Auth
+                                  head={show === "sign" ? "Join Us!" : "Welcome Back!"}
+                                  subhead={show === "sign" ? "SIGN UP WITH" : "LOGIN WITH"}
+                                  bottomText1={show === "sign" ? "Are you already a member ?" : "Not a member yet ?"}
+                                  bottomText2={show === "sign" ? "LOG IN" : "SIGN UP"}
+                                  modalIsOpen = {modalIsOpen}
+                                  setModalIsOpen = {setModalIsOpen}
+                                  openModal = {openModal}
+                                  display={<img src={DC} alt="favorite" />}
+                                  setStatus={setSign}
+                                  storedStatus={show}
+                              ></Auth>
+                                )
+                              }
+                            
                             </Box>
                             {/* <Item>Item 1</Item> */}
                             {/* <Item>Item 2</Item>

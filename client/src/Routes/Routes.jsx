@@ -18,7 +18,7 @@ import { Certificate } from "../Components/Pages/Certificate";
 const Routes = () => {
     return (
         <>
-        
+            
             <Switch>
 
                 <Route exact path = "/">
@@ -31,6 +31,9 @@ const Routes = () => {
                 </Route>
                 <Route  path = "/playvideo/:videoid/:courseid">
                     <PlayVideo />
+                </Route>
+                <Route path = "/certificate/:id">
+                <Certificate />
                 </Route>
             </Switch>
             <Footer></Footer>

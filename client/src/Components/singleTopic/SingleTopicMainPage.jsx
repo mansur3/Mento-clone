@@ -331,6 +331,7 @@ const dispatch = useDispatch();
                   }
                   
                 </Box>
+                <div style = {{textAlign : "left", marginLeft : "200px"}}>
                 <Typography
                   variant="h1"
                   sx={{
@@ -369,7 +370,7 @@ const dispatch = useDispatch();
                   </span>{" "}
                   Certificate of Completion signed by {all.authorName}
                 </Typography>
-
+                  </div>
                 <Box sx={{ mt: 4 }} variant="contained">
                   <Button onClick={handleOpen}>
                     <img

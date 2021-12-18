@@ -27,13 +27,13 @@ const AllLesson = () => {
             <Typography sx = {{fontSize: "18px", fontFamily : "Poppins, sans-serif", fontWeight: "600", color : "white"}} component="div">
                 
                
-                <Box sx={{ textAlign: 'center', m: 1 }}>ALL LESSONS</Box>
+                <Box sx={{ textAlign: 'center', m: 1, mt : 3 }}>ALL LESSONS</Box>
                 
                 </Typography>
 
 
                 
-                <Grid sx = {{padding: 5, mt : -4}} container spacing={15}>
+                <Grid sx = {{padding: 5, mt : -8}} container spacing={15}>
 
                     {
                         lesson.map((e, i) => (

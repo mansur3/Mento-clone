@@ -34,7 +34,7 @@ const First = () => {
                 <Grid sx = {{padding: 5}} container spacing={16}>
                     
                     <Grid sx = {{mt: 8}} item xs={6} md={4}>
-                        <Typography variant = "h2" sx = {{fontSize: "62px", fontFamily : "Roboto Slabs", fontWeight: "800", color : "white"}} component = "div" >
+                        <Typography variant = "h2" sx = {{fontSize: "52px", fontFamily : "Roboto Slab", fontWeight: "800", color : "white"}} component = "div" >
                             Learn From India's Biggest Mentors
                         </Typography>
                         <Typography variant = "h1" sx = {{paddingRight : 4, lineHeight : "2", fontSize: "22px", fontFamily : "Roboto Condensed", color : "white", mt: "5px"}} component = "div" >

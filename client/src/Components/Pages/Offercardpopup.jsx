@@ -1,4 +1,3 @@
-
 import Modal from  "react-modal"
 import { useState } from "react";
 import axios from "axios";
@@ -6,6 +5,9 @@ import { border, borderRadius, color, width } from "@mui/system";
 import "./offercardpopup.css"
 import { useCallback } from "react";
 import useRazorpay, { RazorpayOptions } from "react-razorpay";
+import cross from "./icons/crossicon.svg"
+import arrow from "./icons/arrow-right.svg"
+import tick from "./icons/Tick.svg"
 
 // import Auth from './Pages/Auth/Auth';
 import { useSelector, useDispatch } from 'react-redux';
@@ -134,9 +136,9 @@ const Razorpay = useRazorpay();
              backgroundColor:"#1A1D24",
             
              width: "30%",
-             height:"750px",
+             maxHeight:"600px",
             
-             marginTop:"0%",
+            //  marginTop:"0%",
              marginLeft:"35%",
              marginRight:"35%",
              borderRadius:'20px',
@@ -146,20 +148,20 @@ const Razorpay = useRazorpay();
 
      }}>
          
-         <img className="cross" src="cross icon.svg" alt="" onClick={()=>setIsOpen(false)}></img>
-          <h1 className="offermodal1" style={{width:"50%",margin:"auto"}}>₹499</h1>
+         <img className="cross" src={cross} alt="" onClick={()=>setIsOpen(false)}></img>
+         <h1 className="offermodal1" style={{width:"50%",margin:"auto"}}>₹499</h1>
          <p className="offermodal2">Get 1 year access to:</p>
          <div style={{width:"60%",margin:"auto"}}>
          <div style={{display:"flex"}}>
-             <img  src="Tick.svg"></img>
+             <img  src={tick}></img>
              <p className="offermodal3">All lessons delivered by Ritesh Agarwal</p>
          </div>
          <div style={{display:"flex"}}>
-             <img  src="Tick.svg"></img>
+             <img  src={tick}></img>
              <p className="offermodal3">Signed certificate by Ritesh Agarwal</p>
          </div>
          <div style={{display:"flex"}}>
-             <img  src="Tick.svg"></img>
+             <img  src={tick}></img>
              <p className="offermodal3">Detailed workbooks and exercises</p>
          </div>
          </div>
@@ -174,13 +176,10 @@ const Razorpay = useRazorpay();
 
                 </div>
          </div>
-         <button onClick={handlePayment} className="offerbutton">START LEARNING <span src="aarow-right.svg" alt=""></span></button>
+         <button onClick={handlePayment} className="offerbutton">START LEARNING <span src={arrow} alt=""></span></button>
          
          
      </Modal>
     </div>
   );
 }
-
-      
-    

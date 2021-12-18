@@ -33,11 +33,11 @@ const AllLesson = () => {
 
 
                 
-                <Grid sx = {{padding: 5}} container spacing={16}>
+                <Grid sx = {{padding: 5, mt : -4}} container spacing={15}>
 
                     {
                         lesson.map((e, i) => (
-                            <Grid key = {i} sx = {{mt: 8}} item xs={6} md={4}>
+                            <Grid key = {i} sx = {{mt: 2}} item xs={6} md={4}>
                                 <Link style = {{textDecoration : "none"}} to = {`/singletopic/${e._id}`}>
                                 {/* <Typography variant = "h2" sx = {{fontSize: "22px", fontFamily : "Roboto Slab", fontWeight: "800", color : "white"}} component = "div" >
                                     Learn From India's Biggest Mentors
@@ -50,12 +50,7 @@ const AllLesson = () => {
                     }
                     
                     
-                    <Grid sx = {{mt: 8}} item xs={6} md={4}>
-                        <Typography variant = "h2" sx = {{fontSize: "22px", fontFamily : "Roboto Slab", fontWeight: "800", color : "white"}} component = "div" >
-                            Learn From India's Biggest Mentors
-                        </Typography>
- 
-                    </Grid>
+                    
                     
                 </Grid>
                 

@@ -15,7 +15,7 @@ import { authSuccess, authFailure } from "../../Store/Auth/actions";
 
 
 Modal.setAppElement("#root")
-export const Offercart=({isopen, setIsOpen,price, courseId, videoStatus,setVideoStatus })=> {
+export const Offercart=({isopen, setIsOpen,price, courseId, videoStatus,setVideoStatus, authorName })=> {
 //   const [isopen,setIsOpen]=useState(false)
 //   const handleclick=()=>{
 //       setIsOpen(true)
@@ -154,11 +154,11 @@ const Razorpay = useRazorpay();
          <div style={{width:"60%",margin:"auto"}}>
          <div style={{display:"flex"}}>
              <img  src={tick}></img>
-             <p className="offermodal3">All lessons delivered by Ritesh Agarwal</p>
+             <p className="offermodal3">All lessons delivered by {authorName}</p>
          </div>
          <div style={{display:"flex"}}>
              <img  src={tick}></img>
-             <p className="offermodal3">Signed certificate by Ritesh Agarwal</p>
+             <p className="offermodal3">Signed certificate by {authorName}</p>
          </div>
          <div style={{display:"flex"}}>
              <img  src={tick}></img>

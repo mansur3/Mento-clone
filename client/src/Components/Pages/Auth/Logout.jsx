@@ -31,6 +31,7 @@ const Logout = () => {
             localStorage.setItem('data', JSON.stringify(res.data));
             dispatch(authSuccess(res.data))
             setName(res.data.user.name)
+            // console.log(res.data.user.name);
           })
           .catch(err => {
             console.log("Not properly authenticated!");
@@ -44,7 +45,8 @@ const Logout = () => {
                 // setName(user.user.name[0].toUpperCase());
                 fetchUser();
             }
-            console.log(user);
+            setName(user.user.name)
+            console.log(user.user.name);
             
         } else {
             setName("Login")
@@ -70,7 +72,7 @@ const Logout = () => {
 
     return (
         <div>
-            <button className='logout-button' onClick={openModal}>{name}</button>
+            <button className='logout-button' onClick={openModal}>{name[0]}</button>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

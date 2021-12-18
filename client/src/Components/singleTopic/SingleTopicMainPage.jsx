@@ -44,10 +44,10 @@ import {Offercart} from "../Pages/Offercardpopup";
 
 
 import Auth from '../Pages/Auth/Auth';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-
-
+import {authSuccess, authFailure} from "../../Store/Auth/actions.js";
+import axios from "axios";
 
 // import { First } from "../landingPage/firstThing/first";
 // import { Comment } from "../landingPage/comment/Comment";
@@ -130,8 +130,22 @@ const [show, setShow] = useState("login")
                 storedStatus={show}
             ></Auth> */}
 
-
-
+const dispatch = useDispatch();
+            const fetchUser = () => {
+              axios
+                .get("http://localhost:2345/profile", { withCredentials: true })
+                .then(res => {
+                  // console.log("data", res.data)
+                  localStorage.setItem('data', JSON.stringify(res.data));
+                  dispatch(authSuccess(res.data))
+                  // setName(res.data.user.name)
+                })
+                .catch(err => {
+                  console.log("Not properly authenticated!");
+                  console.log("Error", err);
+                  dispatch(authFailure(err))
+                })
+            }
 
 
 
@@ -163,11 +177,15 @@ const [show, setShow] = useState("login")
 
   useEffect(() => {
     getData();
+    if (localStorage.getItem("loginMethod") === "Fastlogin") {
+      // fetchUser()
+    }
+    // console.log(user);
     var data = JSON.parse(localStorage.getItem("data"));
     // console.log(data);
     // console.log(user.user.courses);
     if(isAuth) {
-      if(user.user.courses.includes(id)) {
+      if(data.user.courses.includes(id)) {
         setVideoStatus(false);
       }
     }

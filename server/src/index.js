@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors')
 const passport = require("./configs/passport")
 const session = require("express-session");
+const User = require("./models/user.model.js");
 
 const { register, login, userupdate } = require("./controllers/auth.controller");
 const CoursesController = require("./controllers/allCourses.controller.js");
@@ -54,9 +55,10 @@ app.get('/auth/google/callback',
 
 // For Session Authentication
 
-app.get('/profile', isLoggedIn, function(req, res) {
-
-    res.send(req.user);
+app.get('/profile', isLoggedIn,async  function(req, res) {
+    const usera = await User.findById(req.user.user._id);
+    // console.log(usera);
+    res.send({user : usera, token : req.user.token});
 });
 
 
@@ -65,8 +67,11 @@ app.get('/profile', isLoggedIn, function(req, res) {
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
     // if user is authenticated in the session, carry on
-    if (req.isAuthenticated())
+    if (req.isAuthenticated()){
+        // console.log(req.user);
         return next();
+    }
+        
     // if they aren't redirect them to the home page
     res.redirect('/');
 }

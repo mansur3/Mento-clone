@@ -27,7 +27,7 @@ function App() {
     axios
       .get("http://localhost:2345/profile", { withCredentials: true })
       .then(res => {
-        // console.log("data", res.data)
+        console.log("data", res.data)
         localStorage.setItem('data', JSON.stringify(res.data));
         dispatch(authSuccess(res.data))
         setName(res.data.user.name)

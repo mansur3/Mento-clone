@@ -1,9 +1,16 @@
 import { LOGIN_SUCCESS, LOGIN_FAILURE } from "./actionTypes";
-
+import axios from "axios";
 const initState = {
     isAuth: false,
     user: null
 }
+
+const user = async () => {
+    let {data} = await axios.get("http://localhost:2345/profile", { withCredentials: true })
+    // console.log(data);
+
+}
+user();
 
 export const authReducer = (state = initState, {type, payload}) => {
     switch (type) {

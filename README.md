@@ -3,10 +3,10 @@
 ### Mento aims to provide first hand in-depth career advice from the biggest and best in each field. You'll get all the information you need to decide if a particular career is for you or not. You will get career guidance from the biggest entrepreneur in India 
 
 ## Team Members:-
-1. Mansur Dewan
-2. Pankaj Ganjale
-3. Nikhil C N
-4. Gourav Goyal
+1. [Mansur Dewan](https://www.linkedin.com/in/mansur-dewan-989751170/)
+2. [Pankaj Ganjale](https://www.linkedin.com/in/pankajganjale/)
+3. [Nikhil C N](https://www.linkedin.com/in/nikhilcn/)
+4. [Gourav Goyal](https://www.linkedin.com/in/gourav-goyal18/)
 
 ## To start our Project on your Machine:-
 1. Create a new folder.

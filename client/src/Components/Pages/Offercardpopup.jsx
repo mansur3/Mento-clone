@@ -147,7 +147,7 @@ const Razorpay = useRazorpay();
      }}>
          
          <img className="cross" src="cross icon.svg" alt="" onClick={()=>setIsOpen(false)}></img>
-         <h1 className="offermodal1" style={{width:"50%",margin:"auto"}}>₹499</h1>
+          <h1 className="offermodal1" style={{width:"50%",margin:"auto"}}>₹499</h1>
          <p className="offermodal2">Get 1 year access to:</p>
          <div style={{width:"60%",margin:"auto"}}>
          <div style={{display:"flex"}}>

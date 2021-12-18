@@ -93,7 +93,7 @@ const Razorpay = useRazorpay();
 
     const options: RazorpayOptions = {
       key: "rzp_test_WVl89PSwPNGgbZ",
-      amount: "29900",
+      amount: "49900",
       currency: "INR",
       name: `${user.user.name}`,
       description: "Test Transaction",

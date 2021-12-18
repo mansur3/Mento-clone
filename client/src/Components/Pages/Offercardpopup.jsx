@@ -8,7 +8,9 @@ import { useCallback } from "react";
 import useRazorpay, { RazorpayOptions } from "react-razorpay";
 
 // import Auth from './Pages/Auth/Auth';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { authSuccess, authFailure } from "../../Store/Auth/actions";
+
 
 Modal.setAppElement("#root")
 export const Offercart=({isopen, setIsOpen,price, courseId, videoStatus,setVideoStatus })=> {
@@ -17,10 +19,31 @@ export const Offercart=({isopen, setIsOpen,price, courseId, videoStatus,setVideo
 //       setIsOpen(true)
 
 //   }
-
+const dispatch = useDispatch();
 
 const { isAuth, user } = useSelector((store) => store.auth);
+// const fetchUser = () => {
+//   axios
+//     .get("http://localhost:2345/profile", { withCredentials: true })
+//     .then(res => {
+//       // console.log("data", res.data)
+//       localStorage.setItem('data', JSON.stringify(res.data));
+//       dispatch(authSuccess(res.data))
+//       // setName(res.data.user.name)
+//     })
+//     .catch(err => {
+//       console.log("Not properly authenticated!");
+//       console.log("Error", err);
+//       dispatch(authFailure(err))
+//     })
+// }
 
+
+// useEffect(() => {
+//   if (localStorage.getItem("loginMethod") === "Fastlogin") {
+//     fetchUser()
+//   }
+// }, [])
 
   const updateData = async () => {
     const id = {
@@ -28,13 +51,27 @@ const { isAuth, user } = useSelector((store) => store.auth);
     }
     const {data} = await axios.patch(`http://localhost:2345/profile/${user.user._id}`, id);
     console.log(user.user._id);
+    // axios
+    // .get("http://localhost:2345/profile", { withCredentials: true })
+    // .then(res => {
+    //   // console.log("data", res.data)
+    //   localStorage.setItem('data', JSON.stringify(res.data));
+    //   dispatch(authSuccess(res.data))
+    //   // setName(res.data.user.name)
+    // })
+    // .catch(err => {
+    //   console.log("Not properly authenticated!");
+    //   console.log("Error", err);
+    //   dispatch(authFailure(err))
+    // })
     // console.log(data.user.courses);
     console.log(data);
+    localStorage.setItem("data", JSON.stringify(data));
     if(data.user.courses.includes(courseId)) {
       setVideoStatus(false);
     } 
     
-    localStorage.setItem("data", JSON.stringify(data))
+    // localStorage.setItem("data", JSON.stringify(data))
   }
   
 
@@ -79,6 +116,9 @@ const Razorpay = useRazorpay();
     const rzpay = new Razorpay(options);
     rzpay.open();
     updateData();
+    if (localStorage.getItem("loginMethod") === "Fastlogin") {
+      // fetchUser()
+    }
   }, [Razorpay]);
 
     

@@ -27,7 +27,7 @@ const Routes = () => {
                     <SingleTopicMainPage />
 
                 </Route>
-                <Route exact path = "/playvideo/:videoid/:courseid">
+                <Route  path = "/playvideo/:videoid/:courseid">
                     <PlayVideo />
                 </Route>
             </Switch>

@@ -37,6 +37,9 @@ import Modal from "@mui/material/Modal";
 import Navbar from "../../Shared_Components/Navbar/Navbar"
 
 
+import {Video} from "./one";
+
+
 
 // import {Offercart} from "../Pages/Offercardpopup";
 
@@ -73,7 +76,7 @@ const PlayVideo = () => {
   const [allVideo, setAllVideo] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({});
 
-
+console.log(videoid, courseid);
 // trailer code
 // const [open, setOpen] = useState(false);
 //   const handleOpen = () => setOpen(true);
@@ -106,6 +109,7 @@ const PlayVideo = () => {
     });
   };
 
+  // console.log(selectedVideo)
 
 //   const getVideo = () => {
 //       allVideo.map((e) => {
@@ -114,7 +118,7 @@ const PlayVideo = () => {
 //           }
 //       })
 //   }
-  console.log(selectedVideo);
+  
 
 
   // console.log(allVideo[0].image);
@@ -123,7 +127,7 @@ const PlayVideo = () => {
   useEffect(() => {
     getData();
     // getVideo();
-  }, []);
+  }, [videoid]);
 
   return (
     <>
@@ -188,10 +192,11 @@ const PlayVideo = () => {
 
           <Container maxWidth="xl">
             <Box >
-            <video  style={{ width : "100%", height: "850px", borderRadius: "10px"}}  autoPlay controls>
+            {/* <video  style={{ width : "100%", height: "850px", borderRadius: "10px"}}  autoPlay controls>
                     <source src = {selectedVideo.video} type = "video/mp4" />
                     <source src="movie.ogg" type="video/ogg" />
-               </video>
+               </video> */}
+               <Video oneVideo = {selectedVideo.video}/>
                {/* <iframe
                 position="absolute"
                 src="https://d1tthr7pv14hhy.cloudfront.net/Images/general/background1.mp4"
@@ -459,6 +464,7 @@ const PlayVideo = () => {
 
                           <div
                             key={e._id}
+                            
                             style={{
                               backgroundColor: "#F7F7F7",
                               padding: "5px",

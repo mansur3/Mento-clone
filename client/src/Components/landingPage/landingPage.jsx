@@ -18,7 +18,7 @@ const Main = () => {
             <Box sx={{ flexGrow: 1, backgroundColor : "#242833" }}>
             <Container  maxWidth="xl">
                 <Box sx = {{ml : -5}}>
-                <Navbar  />
+                <Navbar style = {{zIndex: 1}} />
                 </Box>
                      
                 

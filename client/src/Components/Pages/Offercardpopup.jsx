@@ -93,18 +93,18 @@ const Razorpay = useRazorpay();
 
     const options: RazorpayOptions = {
       key: "rzp_test_WVl89PSwPNGgbZ",
-      amount: "50000",
+      amount: "29900",
       currency: "INR",
-      name: `${user.name}`,
+      name: `${user.user.name}`,
       description: "Test Transaction",
-      image: `${user.picture}`,
+      image: `${user.user.picture}`,
       order_id: order.id,
       handler: (res) => {
         console.log(res);
       },
       prefill: {
-        name: `${user.name}`,
-        email: `${user.email}`,
+        name: `${user.user.name}`,
+        email: `${user.user.email}`,
         contact: "",
       },
       notes: {

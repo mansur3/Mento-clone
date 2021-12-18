@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
 import "./Auth.css";
+import fb from "./images/facebook.png"
+import gplus from "./images/google.png"
 
 const customStyles = {
     content: {
@@ -71,8 +73,8 @@ const Auth = ({ head, subhead, bottomText1, bottomText2, display, setStatus, sto
                     <div>{head}</div>
                     <div>{subhead}</div>
                     <div>
-                        <button className='fb-button'><img src="./images/facebook.png" /><span>FACEBOOK</span></button>
-                        <button onClick={() => googleAuth()} className='g-button'><img src="./images/google.png" /><span>GOOGLE+</span></button>
+                        <button className='fb-button'><img src={fb} /><span>FACEBOOK</span></button>
+                        <button onClick={() => googleAuth()} className='g-button'><img src={gplus} /><span>GOOGLE+</span></button>
                     </div>
                     <div><span>{bottomText1}</span><span onClick={showSign} className='onhover'>{bottomText2}</span></div>
                 </div>

@@ -7,6 +7,8 @@ import {SingleTopicMainPage} from "../Components/singleTopic/SingleTopicMainPage
 import {PlayVideo} from "../Components/singleTopic/playVideo/PlayVideo";
 import Navbar from '../Components/Shared_Components/Navbar/Navbar';
 import { Footer } from '../Components/Shared_Components/Footer/Footer';
+import { Offercart } from "../Components/Pages/Offercardpopup";
+import { Certificate } from "../Components/Pages/Certificate";
 
 // import Home from '../Components/Pages/Home';
 // import Auth from '../Components/Pages/Auth/Auth';

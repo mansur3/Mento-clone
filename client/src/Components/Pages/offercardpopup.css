@@ -162,3 +162,7 @@ border-radius: 6px;
     margin-left: 95%;
     
 }
+.cross:hover{
+    cursor: pointer;
+   
+}

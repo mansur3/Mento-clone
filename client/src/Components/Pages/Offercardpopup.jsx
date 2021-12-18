@@ -126,7 +126,7 @@ const Razorpay = useRazorpay();
     <div>
         {/* <button onClick={handleclick}>Open</button> */}
        
-     <Modal isOpen={isopen} onRequestClose={()=>setIsOpen(false)} style={{
+     <Modal isOpen={isopen} onRequestClose={()=>setIsOpen(false)} shouldCloseOnOverlayClick={false} style={{
          overlay:{
              background : "rgba(0, 0, 0, 0.6)"
          },
@@ -135,6 +135,7 @@ const Razorpay = useRazorpay();
             
              width: "30%",
              height:"750px",
+            
              marginTop:"0%",
              marginLeft:"35%",
              marginRight:"35%",

@@ -43,11 +43,9 @@ const First = () => {
                             OVER 350+ VIDEO LESSONS
                             GET SIGNED CERTIFICATES
                         </Typography>
-                        <Box sx = {{mt : 4, bgcolor : "black", borderRadius: "10px"}}  variant="contained">
-                            <Button sx = {{":hover": {
-                                         color: "gray",
-                                             }}}><img src = {logo1} alt = "sdd" /></Button>
-                            <Button><img src = {logo2} alt = "appstore" /></Button>
+                        <Box sx = {{mt : 4,  borderRadius: "10px"}}  variant="contained">
+                            <Button sx = {{mr : 0.3, bgcolor : "black"}}><img src = {logo1} alt = "sdd" /></Button>
+                            <Button sx = {{bgcolor : "black"}}><img src = {logo2} alt = "appstore" /></Button>
                         </Box>
                         
 

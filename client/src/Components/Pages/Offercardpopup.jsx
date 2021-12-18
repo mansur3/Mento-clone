@@ -111,7 +111,7 @@ const Razorpay = useRazorpay();
         address: "Razorpay Corporate Office",
       },
       theme: {
-        color: "#f09951",
+        color: "#f1945b",
       },
     };
 
